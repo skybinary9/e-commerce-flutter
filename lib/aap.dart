@@ -10,8 +10,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MegamartTheme.lighTheme,
       darkTheme: MegamartTheme.darkTheme,
-      
-    );
+      );
     
   }
 }
