@@ -1,22 +1,22 @@
 import 'package:get_storage/get_storage.dart';
 
 class MegartLocalStorage {
-  // Save data to local storage
+  // Singleton instance
   static final MegartLocalStorage _instance = MegartLocalStorage._internal();
-  factory MegartLocalStorage() {
-    return _instance;
+  factory MegartLocalStorage() => _instance;
 
-  }
-  // private constructor
+  // Private constructor
   MegartLocalStorage._internal();
-  final _storage = GetStorage();
+
+  // GetStorage instance
+  static final GetStorage _storage = GetStorage();
 
   // Save data to local storage
   static Future<void> saveData<M>(String key, M value) async {
     await _storage.write(key, value);
   }
 
-  // Retrieve data from local storage]
+  // Retrieve data from local storage
   static M? getData<M>(String key) {
     return _storage.read<M>(key);
   }
@@ -27,10 +27,7 @@ class MegartLocalStorage {
   }
 
   // Clear all data from local storage
-  static Future<void> clearAllData() async {  
+  static Future<void> clearAllData() async {
     await _storage.erase();
   }
-
-  
-
 }
