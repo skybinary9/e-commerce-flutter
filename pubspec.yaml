@@ -16,7 +16,7 @@ dependencies:
   intl: ^0.20.2
   logger: ^2.6.2
   url_launcher: ^6.3.2
-  flutter_native_splash: ^2.4.7
+
 
   # Icons
   iconsax: ^0.0.8
@@ -38,7 +38,6 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-    - assets/logos/
 
   fonts:
     - family: Poppins
@@ -59,13 +58,4 @@ flutter:
         - asset: assets/fonts/Poppins-Bold.ttf
           weight: 800
 
-flutter_native_splash:
-  color: "#ffffff"
-  color_dark: "#272727"
-  image: assets\logos\Your paragrap white text .png
-  image_dark: assets\logos\Your paragraph text.png
-  android: true
-  ios: true
-  web: false
-  android_gravity: center
-  ios_content_mode: scaleAspectFill
+
