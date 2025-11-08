@@ -58,3 +58,14 @@ flutter:
           weight: 600
         - asset: assets/fonts/Poppins-Bold.ttf
           weight: 800
+
+flutter_native_splash:
+  color: "#ffffff"
+  color_dark: "#272727"
+  image: assets\logos\Your paragrap white text .png
+  image_dark: assets\logos\Your paragraph text.png
+  android: true
+  ios: true
+  web: false
+  android_gravity: center
+  ios_content_mode: scaleAspectFill

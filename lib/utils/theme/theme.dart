@@ -16,7 +16,7 @@ class MegamartTheme{
     useMaterial3: true,
     fontFamily: 'Poppins',
     brightness: Brightness.light,
-    primaryColor: Colors.deepOrange, 
+    primaryColor: const Color.fromRGBO(255, 87, 34, 1), 
     scaffoldBackgroundColor: Colors.white,
     textTheme: MegamartTextTheme.lighTextTheme,
     elevatedButtonTheme: MegamartButtonTheme.lightElevatedButton,
