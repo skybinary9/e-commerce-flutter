@@ -88,15 +88,17 @@ class HelperFunction {
 
   // ✅ Get screen sizes safely
   static Size screenSize(BuildContext context) {
-    return MediaQuery.of(context).size;
+    return MediaQuery.of(Get.context!).size;
   }
+  // ✅ Get screen height and width safely
 
   static double screenHeight(BuildContext context) {
-    return MediaQuery.of(context).size.height;
+    return MediaQuery.of(Get.context!).size.height;
   }
+  // ✅ Get screen width safely
 
   static double screenWidth(BuildContext context) {
-    return MediaQuery.of(context).size.width;
+    return MediaQuery.of(Get.context!).size.width;
   }
 
   // ✅ Format date properly

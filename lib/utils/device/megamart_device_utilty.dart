@@ -144,6 +144,6 @@ class MegamartDeviceUtility {
       throw 'Could not Launch $url';
     }
   }
-  
+
 
 }
