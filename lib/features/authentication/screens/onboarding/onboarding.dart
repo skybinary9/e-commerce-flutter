@@ -7,7 +7,6 @@ import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dar
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class Onboarding extends StatelessWidget {
   const Onboarding({super.key});
