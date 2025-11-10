@@ -36,6 +36,7 @@ class LoginForm extends StatelessWidget {
               obscureText: true,
               decoration: InputDecoration(
                 suffixIcon: const Icon(Iconsax.eye_slash),
+                prefix: const Icon(Iconsax.password_check),
                 labelText: MegamartText.password,
                 border: OutlineInputBorder(
                   borderRadius:

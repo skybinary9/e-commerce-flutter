@@ -26,9 +26,11 @@ class LoginHeader extends StatelessWidget {
           height: 150,
         ),
         const SizedBox(height: MegamartSize.spaceBtwSection),
+        
         Text(
           MegamartText.loginTitle,
           style: Theme.of(context).textTheme.headlineMedium,
+          
         ),
         const SizedBox(height: MegamartSize.sm),
         Text(

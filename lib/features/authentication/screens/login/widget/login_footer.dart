@@ -6,58 +6,61 @@ import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 
-
 /// ---------------------------------------------------------------------------
 /// 🟢 FOOTER WIDGET (Divider + Social Buttons)
 /// ---------------------------------------------------------------------------
 class LoginFooter extends StatelessWidget {
-  const LoginFooter();
+  const LoginFooter({super.key});
 
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunction.isDarkMode(context);
 
-    return Column(
-      children: [
-        // Divider with text
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Flexible(
-              child: Divider(
-                color: dark ? MegamartColors.darkGray : MegamartColors.dGray,
-                thickness: 0.5,
-                indent: 60,
-                endIndent: 5,
+    return Padding(
+      padding: const EdgeInsets.only(top: MegamartSize.spaceBtwSection),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          /// Divider with text
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(
+                child: Divider(
+                  color: dark ? MegamartColors.darkGray : MegamartColors.dGray,
+                  thickness: 0.5,
+                  indent: 60,
+                  endIndent: 5,
+                ),
               ),
-            ),
-            Text(
-              MegamartText.signWith,
-              style: Theme.of(context).textTheme.labelMedium,
-            ),
-            Flexible(
-              child: Divider(
-                color: dark ? MegamartColors.darkGray : MegamartColors.dGray,
-                thickness: 0.5,
-                indent: 5,
-                endIndent: 60,
+              Text(
+                MegamartText.signWith,
+                style: Theme.of(context).textTheme.labelMedium,
               ),
-            ),
-          ],
-        ),
+              Flexible(
+                child: Divider(
+                  color: dark ? MegamartColors.darkGray : MegamartColors.dGray,
+                  thickness: 0.5,
+                  indent: 5,
+                  endIndent: 60,
+                ),
+              ),
+            ],
+          ),
 
-        const SizedBox(height: MegamartSize.spaceBtwItems),
+          const SizedBox(height: MegamartSize.spaceBtwItems),
 
-        // Social Buttons
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SocialButton(image: MegamartImages.google),
-            const SizedBox(width: MegamartSize.spaceBtwItems),
-            SocialButton(image: MegamartImages.facebook),
-          ],
-        ),
-      ],
+          /// Social Buttons (Google + Facebook)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              SocialButton(image: MegamartImages.google),
+              SizedBox(width: MegamartSize.spaceBtwItems),
+              SocialButton(image: MegamartImages.facebook),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
