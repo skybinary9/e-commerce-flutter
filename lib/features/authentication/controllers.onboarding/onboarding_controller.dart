@@ -1,3 +1,4 @@
+import 'package:ecommerce_final_year_project/features/authentication/screens/login/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -25,8 +26,7 @@ class OnboardingController extends GetxController {
       int nextPage = currentIndex.value + 1;
       pageController.jumpToPage(nextPage);
     } else {
-      // When last page reached (you can navigate to LoginScreen here)
-      // Get.to(LoginScreen());
+      Get.to(LoginScreen());
     }
   }
 

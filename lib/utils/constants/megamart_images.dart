@@ -10,4 +10,6 @@ class MegamartImages {
   static const String onboard1 = "assets/images/on_boarding_images/N-jGxXF8OA4CiLPj.webp";
   static const String onboard2 = "assets/images/on_boarding_images/W0iC3VSphSSO0wcW.png";
 
+  
+
 }
