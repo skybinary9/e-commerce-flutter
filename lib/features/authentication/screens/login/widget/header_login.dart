@@ -4,12 +4,11 @@ import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 
-
 /// ---------------------------------------------------------------------------
-/// 🟢 HEADER WIDGET
+/// 🟢 LOGIN HEADER WIDGET (Final Polished Version)
 /// ---------------------------------------------------------------------------
 class LoginHeader extends StatelessWidget {
-  const LoginHeader();
+  const LoginHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,26 +16,35 @@ class LoginHeader extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        // Logo
-        Image(
-          image: AssetImage(
-            dark ? MegamartImages.lightlogo : MegamartImages.darklogo,
+        /// 🖼️ Logo with fade animation
+        AnimatedSwitcher(
+          duration: const Duration(milliseconds: 400),
+          child: Image.asset(
+            dark ? MegamartImages.darklogo : MegamartImages.lightlogo,
+            key: ValueKey(dark), // ensures smooth logo switch on theme change
+            //height: MegamartSize., // ✅ semantic size constant
           ),
-          height: 150,
         ),
+
         const SizedBox(height: MegamartSize.spaceBtwSection),
-        
+        /// Title
         Text(
           MegamartText.loginTitle,
-          style: Theme.of(context).textTheme.headlineMedium,
-          
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
         ),
         const SizedBox(height: MegamartSize.sm),
+        /// Subtitle
         Text(
           MegamartText.loginSubTitle,
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Colors.grey.shade600,
+              ),
         ),
       ],
     );
