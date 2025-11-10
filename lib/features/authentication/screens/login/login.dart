@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:ecommerce_final_year_project/common/styles/megamart_spacing_style.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/header_login.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/login_footer.dart';
