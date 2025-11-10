@@ -24,11 +24,11 @@ class LoginHeader extends StatelessWidget {
           child: Image.asset(
             dark ? MegamartImages.darklogo : MegamartImages.lightlogo,
             key: ValueKey(dark), // ensures smooth logo switch on theme change
-            //height: MegamartSize., // ✅ semantic size constant
+            height: MegamartSize.imageLg, // ✅ semantic size constant
           ),
         ),
 
-        const SizedBox(height: MegamartSize.spaceBtwSection),
+        const SizedBox(height: MegamartSize.spaceBetweenSections),
         /// Title
         Text(
           MegamartText.loginTitle,

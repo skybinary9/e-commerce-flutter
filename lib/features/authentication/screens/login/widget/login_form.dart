@@ -15,7 +15,7 @@ class LoginForm extends StatelessWidget {
     return Form(
       child: Padding(
         padding:
-            const EdgeInsets.symmetric(vertical: MegamartSize.spaceBtwSection),
+            const EdgeInsets.symmetric(vertical: MegamartSize.spaceBetweenSections),
         child: Column(
           children: [
             // Email Field
@@ -25,11 +25,11 @@ class LoginForm extends StatelessWidget {
                 labelText: MegamartText.email,
                 border: OutlineInputBorder(
                   borderRadius:
-                      BorderRadius.circular(MegamartSize.inputfieldradius),
+                      BorderRadius.circular(MegamartSize.inputFieldRadius),
                 ),
               ),
             ),
-            const SizedBox(height: MegamartSize.spaceBtwInputFields),
+            const SizedBox(height: MegamartSize.spaceBetweenInputFields),
 
             // Password Field
             TextFormField(
@@ -40,11 +40,11 @@ class LoginForm extends StatelessWidget {
                 labelText: MegamartText.password,
                 border: OutlineInputBorder(
                   borderRadius:
-                      BorderRadius.circular(MegamartSize.inputfieldradius),
+                      BorderRadius.circular(MegamartSize.inputFieldRadius),
                 ),
               ),
             ),
-            const SizedBox(height: MegamartSize.spaceBtwInputFields / 2),
+            const SizedBox(height: MegamartSize.spaceBetweenInputFields / 2),
 
             // Remember Me + Forgot Password
             Row(
@@ -63,7 +63,7 @@ class LoginForm extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: MegamartSize.spaceBtwSection),
+            const SizedBox(height: MegamartSize.spaceBetweenSections),
 
             // Sign In Button
             SizedBox(
@@ -73,20 +73,20 @@ class LoginForm extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius:
-                        BorderRadius.circular(MegamartSize.buttonradius),
+                        BorderRadius.circular(MegamartSize.buttonRadius),
                   ),
                 ),
                 child: const Text(
                   MegamartText.signIn,
                   style: TextStyle(
-                    fontSize: MegamartSize.fontsizelg,
+                    fontSize: MegamartSize.fontLg,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
 
-            const SizedBox(height: MegamartSize.spaceBtwSection),
+            const SizedBox(height: MegamartSize.spaceBetweenSections),
 
             // Sign Up Text
             TextButton(

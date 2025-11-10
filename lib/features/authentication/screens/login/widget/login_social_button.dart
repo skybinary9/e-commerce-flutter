@@ -21,8 +21,8 @@ class SocialButton extends StatelessWidget {
       child: IconButton(
         onPressed: () {},
         icon: Image(
-          height: MegamartSize.iconmd,
-          width: MegamartSize.iconmd,
+          height: MegamartSize.iconMd,
+          width: MegamartSize.iconMd,
           image: AssetImage(image),
         ),
       ),

@@ -15,7 +15,7 @@ class OnboardingDotNavigation extends StatelessWidget {
 
     return Positioned(
       bottom: MegamartDeviceUtility.getBottomNavigationBarHeigjht() + 25,
-      left: MegamartSize.defaultspace,
+      left: MegamartSize.defaultSpace,
       child: SmoothPageIndicator(
         controller: controller.pageController,
         count: 3,

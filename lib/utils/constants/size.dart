@@ -1,74 +1,102 @@
-
 class MegamartSize {
-  MegamartSize._();
+  MegamartSize._(); // Private constructor to prevent instantiation
 
-// Spacing Sizes
+  // =====================
+  // Spacing Sizes
+  // =====================
   static const double xS = 4.0;
   static const double sm = 8.0;
   static const double md = 16.0;
   static const double lg = 24.0;
   static const double xl = 32.0;
 
-// Icon Sizes
-  static const double iconxS = 12.0;
-  static const double iconsm = 16.0;
-  static const double iconmd = 24.0;
-  static const double iconlg = 32.0;
-  static const double iconxl = 40.0;
+  static const double defaultSpace = 24.0;
+  static const double spaceBetweenItems = 16.0;
+  static const double spaceBetweenSections = 32.0;
 
-// Font Sizes
-  static const double fontsizesm = 12.0;
-  static const double fontsizemd = 14.0;
-  static const double fontsizelg = 16.0;
-  static const double fontsizexl = 18.0;
-  static const double fontsizexxl = 22.0;
+  // =====================
+  // Icon Sizes
+  // =====================
+  static const double iconXs = 12.0;
+  static const double iconSm = 16.0;
+  static const double iconMd = 24.0;
+  static const double iconLg = 32.0;
+  static const double iconXl = 40.0;
 
-// Button Sizes
-  static const double buttonheight = 48.0;
-  static const double buttonradius = 12.0;
-  static const double buttonwidth = 160.0;
-  static const double buttonelevation = 2.0;
+  // =====================
+  // Font Sizes
+  // =====================
+  static const double fontSm = 12.0;
+  static const double fontMd = 14.0;
+  static const double fontLg = 16.0;
+  static const double fontXl = 18.0;
+  static const double fontXxl = 22.0;
 
-// AppBar Size
-  static const double appbarheight = 56.0;
+  // =====================
+  // Button Sizes
+  // =====================
+  static const double buttonHeight = 48.0;
+  static const double buttonWidth = 160.0;
+  static const double buttonRadius = 12.0;
+  static const double buttonElevation = 2.0;
 
-// Image Sizes
-  static const double imagethumbsize = 80.0;
-  static const double bannerheight = 200.0;
-  static const double productimagessize = 120.0;
-  static const double productimagesradius = 16.0;
-  static const double productimagesheight = 160.0;
+  // =====================
+  // AppBar
+  // =====================
+  static const double appBarHeight = 56.0;
 
-// Default Spacing
-  static const double defaultspace = 24.0;
-  static const double spaceBtwItems = 16.0;
-  static const double spaceBtwSection = 32.0;
+  // =====================
+  // Image Sizes
+  // =====================
+  static const double imageThumbSize = 80.0;
+  static const double bannerHeight = 200.0;
+  static const double productImageSize = 120.0;
+  static const double productImageRadius = 16.0;
+  static const double productImageHeight = 160.0;
 
+  // Semantic Login Header Logo
+  static const double imageLg = 150.0;
+
+  // =====================
   // Border Radius
-  static const double borderRadiussm = 6.0;
-  static const double borderRadiusmd = 10.0;
-  static const double borderRadiuslg = 16.0;
+  // =====================
+  static const double borderRadiusSm = 6.0;
+  static const double borderRadiusMd = 10.0;
+  static const double borderRadiusLg = 16.0;
 
+  // =====================
   // Divider
-  static const double dividerheight = 1.0;
+  // =====================
+  static const double dividerHeight = 1.0;
 
+  // =====================
   // Input Field
-  static const double inputfieldradius = 12.0;
-  static const double spaceBtwInputFields = 16.0;
+  // =====================
+  static const double inputFieldRadius = 12.0;
+  static const double spaceBetweenInputFields = 16.0;
+  static const double formSectionSpacing = 32.0; // semantic spacing for forms
 
+  // =====================
   // Card
-  static const double cardradiuslg = 16.0;
-  static const double cardradiusmd = 12.0;
-  static const double cardradiussm = 8.0;
-  static const double cardradiusxs = 6.0;
-  static const double cardelevation = 3.0;
+  // =====================
+  static const double cardRadiusLg = 16.0;
+  static const double cardRadiusMd = 12.0;
+  static const double cardRadiusSm = 8.0;
+  static const double cardRadiusXs = 6.0;
+  static const double cardElevation = 3.0;
 
+  // =====================
   // Image Carousel
-  static const double imagecarouselheight = 220.0;
+  // =====================
+  static const double imageCarouselHeight = 220.0;
 
+  // =====================
   // Loading Indicator
-  static const double loadingindicatorsize = 36.0;
+  // =====================
+  static const double loadingIndicatorSize = 36.0;
 
-  // Grid View Spacing
-  static const double gridviewspacing = 16.0;
+  // =====================
+  // GridView Spacing
+  // =====================
+  static const double gridViewSpacing = 16.0;
 }

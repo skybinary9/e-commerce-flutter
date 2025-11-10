@@ -14,7 +14,7 @@ class OnboardingNextButton extends StatelessWidget {
     final dark = HelperFunction.isDarkMode(context);
 
     return Positioned(
-      right: MegamartSize.defaultspace,
+      right: MegamartSize.defaultSpace,
       bottom: MegamartDeviceUtility.getBottomNavigationBarHeigjht(),
       child: ElevatedButton(
         onPressed: () => OnboardingController.instance.nextPage(),

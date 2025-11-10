@@ -17,7 +17,7 @@ class LoginFooter extends StatelessWidget {
     final dark = HelperFunction.isDarkMode(context);
 
     return Padding(
-      padding: const EdgeInsets.only(top: MegamartSize.spaceBtwSection),
+      padding: const EdgeInsets.only(top: MegamartSize.spaceBetweenSections),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -48,14 +48,14 @@ class LoginFooter extends StatelessWidget {
             ],
           ),
 
-          const SizedBox(height: MegamartSize.spaceBtwItems),
+          const SizedBox(height: MegamartSize.spaceBetweenItems),
 
           /// Social Buttons (Google + Facebook)
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               SocialButton(image: MegamartImages.google),
-              SizedBox(width: MegamartSize.spaceBtwItems),
+              SizedBox(width: MegamartSize.spaceBetweenItems),
               SocialButton(image: MegamartImages.facebook),
             ],
           ),

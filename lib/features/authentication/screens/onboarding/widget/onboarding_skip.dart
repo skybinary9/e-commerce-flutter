@@ -10,7 +10,7 @@ class OnboardingSkip extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       top: MegamartDeviceUtility.getappBarHeight(),
-      right: MegamartSize.defaultspace,
+      right: MegamartSize.defaultSpace,
       child: TextButton(
         onPressed: () => OnboardingController.instance.skipPage(),
         child: const Text("Skip"),

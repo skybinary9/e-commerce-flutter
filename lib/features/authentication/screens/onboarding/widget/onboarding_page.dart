@@ -12,7 +12,7 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(MegamartSize.defaultspace),
+      padding: const EdgeInsets.all(MegamartSize.defaultSpace),
       child: Column(
         children: [
           Image
@@ -26,7 +26,7 @@ class OnboardingPage extends StatelessWidget {
             Text(title, 
             style: Theme.of(context).textTheme.headlineMedium, 
             textAlign: TextAlign.center,),
-            const SizedBox(height: MegamartSize.spaceBtwItems,),
+            const SizedBox(height: MegamartSize.spaceBetweenItems,),
       
             Text(subtitle, 
             style: Theme.of(context).textTheme.bodyMedium, 
