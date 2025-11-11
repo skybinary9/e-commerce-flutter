@@ -42,9 +42,7 @@ class LoginHeader extends StatelessWidget {
         Text(
           MegamartText.loginSubTitle,
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Colors.grey.shade600,
-              ),
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.grey.shade600,),
         ),
       ],
     );

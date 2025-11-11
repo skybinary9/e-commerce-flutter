@@ -1,6 +1,9 @@
+import 'package:ecommerce_final_year_project/features/authentication/screens/signup/signup.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 
@@ -36,7 +39,7 @@ class LoginForm extends StatelessWidget {
               obscureText: true,
               decoration: InputDecoration(
                 suffixIcon: const Icon(Iconsax.eye_slash),
-                prefix: const Icon(Iconsax.password_check),
+                prefix: const Icon(Iconsax.password_check5),
                 labelText: MegamartText.password,
                 border: OutlineInputBorder(
                   borderRadius:
@@ -90,7 +93,8 @@ class LoginForm extends StatelessWidget {
 
             // Sign Up Text
             TextButton(
-              onPressed: () {},
+              
+              onPressed: () => Get.to(()=> const SignupScreen()),
               child: RichText(
                 text: TextSpan(
                   text: MegamartText.noAccount,

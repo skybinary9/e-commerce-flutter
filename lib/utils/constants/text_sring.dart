@@ -42,8 +42,12 @@ class MegamartText {
   static const String signIn = 'Sign In';
   static const String signUp = 'Sign Up';
   static const String signWith = 'Or continue with sign In';
-  static const String termsAndConditions =
-      'By signing up, you agree to our Terms & Conditions and Privacy Policy.';
+  static const String isAgreeTo = 'I agree to.';
+  static const String privacyPolicy = "privacy Policy";
+  static const String terms = "terms of use";
+  static const String and = "and";
+
+
   static const String verificationCodeSent =
       'A verification code has been sent to your email address.';
   static const String enterVerificationCode =
