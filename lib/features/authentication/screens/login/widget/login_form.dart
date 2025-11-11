@@ -5,7 +5,7 @@ import 'package:iconsax/iconsax.dart';
 
 
 /// ---------------------------------------------------------------------------
-/// 🟢 LOGIN FORM WIDGET
+///  LOGIN FORM WIDGET
 /// ---------------------------------------------------------------------------
 class LoginForm extends StatelessWidget {
   const LoginForm();
