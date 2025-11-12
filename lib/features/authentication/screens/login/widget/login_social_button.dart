@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class SocialButton extends StatelessWidget {
   final String image;
 
-  const SocialButton({required this.image});
+  const SocialButton({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {

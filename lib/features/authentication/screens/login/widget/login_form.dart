@@ -3,15 +3,13 @@ import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
-
 
 /// ---------------------------------------------------------------------------
 ///  LOGIN FORM WIDGET
 /// ---------------------------------------------------------------------------
 class LoginForm extends StatelessWidget {
-  const LoginForm();
+  const LoginForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +37,7 @@ class LoginForm extends StatelessWidget {
               obscureText: true,
               decoration: InputDecoration(
                 suffixIcon: const Icon(Iconsax.eye_slash),
-                prefix: const Icon(Iconsax.password_check5),
+                prefixIcon: const Icon(Iconsax.password_check5),
                 labelText: MegamartText.password,
                 border: OutlineInputBorder(
                   borderRadius:
