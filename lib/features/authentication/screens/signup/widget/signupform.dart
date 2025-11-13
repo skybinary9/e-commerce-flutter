@@ -1,7 +1,9 @@
+import 'package:ecommerce_final_year_project/features/authentication/screens/signup/verify_email.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/signup/widget/termscondition.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SignupForm extends StatelessWidget {
@@ -80,15 +82,12 @@ class SignupForm extends StatelessWidget {
           ),
           const SizedBox(height: MegamartSize.spaceBetweenInputFields),
     
-          // Terms & Conditions
-          TermsCondition(dark: dark),
-          const SizedBox(height: MegamartSize.spaceBetweenSections),
-    
+         
           // Sign Up Button
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Get.to(const VerifyEmailScreen()),
               child: const Text('Sign Up'),
             ),
           ),

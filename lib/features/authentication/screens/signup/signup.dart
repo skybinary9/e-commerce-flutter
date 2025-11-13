@@ -1,9 +1,14 @@
 import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/login_footer.dart';
-import 'package:ecommerce_final_year_project/features/authentication/screens/signup/widget/signup.dart';
+import 'package:ecommerce_final_year_project/features/authentication/screens/signup/widget/signupform.dart';
+import 'package:ecommerce_final_year_project/features/authentication/screens/signup/widget/termscondition.dart';
+import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:iconsax/iconsax.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -13,7 +18,12 @@ class SignupScreen extends StatelessWidget {
     final dark = HelperFunction.isDarkMode(context);
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          IconButton(onPressed: () => Get.back(), icon:  Icon(Iconsax.back_square5),),
+        ],
+      
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(MegamartSize.defaultSpace),
@@ -32,6 +42,11 @@ class SignupScreen extends StatelessWidget {
           
 
               const SizedBox(height: MegamartSize.spaceBetweenSections),
+              
+              // Terms & Conditions
+              TermsCondition(dark: dark),
+              const SizedBox(height: MegamartSize.spaceBetweenSections),
+    
 
               // Footer
               const LoginFooter(),

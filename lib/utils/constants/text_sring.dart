@@ -47,13 +47,21 @@ class MegamartText {
   static const String terms = "terms of use";
   static const String and = "and";
 
+  static const String toContinue = '  Continue';
 
+
+  static const String verEmail = 'Verify Your Email Address';
   static const String verificationCodeSent =
       'A verification code has been sent to your email address.';
-  static const String enterVerificationCode =
-      'Please enter the verification code below to verify your account.';
+  static const String confirmationEmailSubtitle = "Congatulations! Your account awaits confirmation. Please check your email to verify your account and start shopping with Megamart.";
+  
+  static const String yourAccountCretedTitle = 'Your Account is Created!';
+  static const String yourAccountCretedSubtitle =
+      'Congratulations! Your Megamart account has been successfully created. You can now log in and start shopping for your favorite products.';
   static const String didNotReceiveCode =
       "Didn't receive the code? ";
+
+  static const String resendEmail = 'Resend Email';
   static const String resendCode = 'Resend Code';
   static const String changePassword = 'Change Password';
   static const String passwordChanged =
