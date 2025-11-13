@@ -34,5 +34,6 @@ class OnboardingController extends GetxController {
   void skipPage() {
     currentIndex.value = 2;
     pageController.jumpToPage(2);
+    
   }
 }
