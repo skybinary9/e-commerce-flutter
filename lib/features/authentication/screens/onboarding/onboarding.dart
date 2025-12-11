@@ -13,14 +13,14 @@ class Onboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Controller = Get.put(OnboardingController());
+    final controller = Get.put(OnboardingController());
     return Scaffold(
       body: Stack(
         children: [
           // Horizontal Page View
           PageView(
-            controller: Controller.pageController,
-            onPageChanged: Controller.updatePageIndicator,
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
 
             children: [
               OnboardingPage(

@@ -7,24 +7,18 @@ import 'package:get_storage/get_storage.dart';
 class OnboardingController extends GetxController {
   static OnboardingController get instance => Get.find();
 
-  // Page Controller
   final PageController pageController = PageController();
-
-  // Observable current index
   RxInt currentIndex = 0.obs;
 
-  // Update current index when page changes
   void updatePageIndicator(int index) {
     currentIndex.value = index;
   }
 
-  // Dot navigation
   void dotNavigationClick(int index) {
     currentIndex.value = index;
     pageController.jumpToPage(index);
   }
 
-  // Go to next page
   void nextPage() {
     final storage = GetStorage();
 
@@ -39,12 +33,14 @@ class OnboardingController extends GetxController {
     if (currentIndex.value < 2) {
       pageController.jumpToPage(currentIndex.value + 1);
     } else {
-      Get.off(() => LoginScreen());
+      Get.off(() => const LoginScreen());
     }
   }
 
-  // Skip onboarding completely
   void skipPage() {
+    final storage = GetStorage();
+    storage.write('isFirstTime', false);
+
     currentIndex.value = 2;
     pageController.jumpToPage(2);
   }

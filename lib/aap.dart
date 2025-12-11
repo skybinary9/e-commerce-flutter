@@ -1,3 +1,4 @@
+import 'package:ecommerce_final_year_project/data/repositories/authentication_repository.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:ecommerce_final_year_project/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,12 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MegamartTheme.lighTheme,
       darkTheme: MegamartTheme.darkTheme,
-      home: const Onboarding(),
+      home: const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      ),
+      initialBinding: BindingsBuilder(() {
+        Get.put(AuthenticationRepository());
+      }),
       );
     
   }
