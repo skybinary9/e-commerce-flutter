@@ -1,5 +1,4 @@
 import 'package:ecommerce_final_year_project/features/authentication/screens/signup/verify_email.dart';
-import 'package:ecommerce_final_year_project/features/authentication/screens/signup/widget/termscondition.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:flutter/material.dart';

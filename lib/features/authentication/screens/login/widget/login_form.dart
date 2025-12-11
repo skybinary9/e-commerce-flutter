@@ -1,4 +1,6 @@
+import 'package:ecommerce_final_year_project/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/signup/signup.dart';
+import 'package:ecommerce_final_year_project/navigationbottom.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +60,7 @@ class LoginForm extends StatelessWidget {
                   ],
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: ()=>Get.to(()=> const ForgetPassword()),
                   child: const Text(MegamartText.forgotPassword),
                 ),
               ],
@@ -70,7 +72,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(()=> const BottomNavigationMenu()),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius:

@@ -1,6 +1,5 @@
 import 'package:ecommerce_final_year_project/common/widgets/login_signup/success_screen/success_screen.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/login/login.dart';
-import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/login_footer.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:flutter/cupertino.dart';

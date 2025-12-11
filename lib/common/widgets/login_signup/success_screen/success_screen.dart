@@ -18,12 +18,12 @@ class SuccessScreen extends StatelessWidget {
             children: [
               // text tile & subtitle
               Text(
-                MegamartText.yourAccountCretedTitle,
+                MegamartText.yourAccountCreatedTitle,
                 style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,
               ),
               const SizedBox(height: MegamartSize.spaceBetweenItems),
               Text(
-                MegamartText.yourAccountCretedSubtitle,
+                MegamartText.yourAccountCreatedSubtitle,
                 style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center,
               ),
               

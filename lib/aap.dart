@@ -1,4 +1,5 @@
 import 'package:ecommerce_final_year_project/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MegamartTheme.lighTheme,
       darkTheme: MegamartTheme.darkTheme,
-      home: const Onboarding(), // <-- SplashScreen as initial screen
+      home: const Onboarding(),
       );
     
   }
