@@ -1,4 +1,4 @@
-import 'package:ecommerce_final_year_project/features/personaliztion/screens/home/home.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/widget/home.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
