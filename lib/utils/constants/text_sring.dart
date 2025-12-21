@@ -19,9 +19,9 @@ class MegamartText {
   // ---------------------------
   // Home Screen Texts
   // ---------------------------
-  static const String homeTitle = 'Discover the Best Deals at Megamart';
+  static const String homeTitle = 'Welcome to Megamart';
   static const String homeSubTitle =
-      'Shop from a wide range of quality products — from fashion to electronics — all in one place!';
+      'Good Day, Shop Easy & Fast';
 
   // ---------------------------
   // Login Texts
