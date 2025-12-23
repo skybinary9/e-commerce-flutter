@@ -1,4 +1,3 @@
-
 import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_final_year_project/common/widgets/product_cart/menu_product_cart.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
