@@ -52,7 +52,7 @@ class MegamartColors {
   static const Color black = Color(0xFF000000);
   static const Color darkerGray = Color(0xFF212121);
   static const Color darkGray = Color(0xFF424242);
-  static const Color dGray = Color(0xFF616161);
+  static const Color grey = Color(0xFF616161);
   static const Color softGray = Color(0xFF9E9E9E);
   static const Color lightGray = Color(0xFFBDBDBD);
   static const Color white = Color(0xFFFFFFFF);

@@ -1,4 +1,4 @@
-import 'package:ecommerce_final_year_project/features/authentication/controllers.onboarding/onboarding_controller.dart';
+import 'package:ecommerce_final_year_project/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/onboarding/widget/onboadring_navigation.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/onboarding/widget/onboarding_page.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/onboarding/widget/onboarding_skip.dart';

@@ -27,7 +27,7 @@ class LoginFooter extends StatelessWidget {
             children: [
               Flexible(
                 child: Divider(
-                  color: dark ? MegamartColors.darkGray : MegamartColors.dGray,
+                  color: dark ? MegamartColors.darkGray : MegamartColors.darkGray,
                   thickness: 0.5,
                   indent: 60,
                   endIndent: 5,
@@ -39,7 +39,7 @@ class LoginFooter extends StatelessWidget {
               ),
               Flexible(
                 child: Divider(
-                  color: dark ? MegamartColors.darkGray : MegamartColors.dGray,
+                  color: dark ? MegamartColors.darkGray : MegamartColors.darkGray,
                   thickness: 0.5,
                   indent: 5,
                   endIndent: 60,

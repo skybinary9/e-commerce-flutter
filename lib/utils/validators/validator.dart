@@ -1,4 +1,12 @@
 class MegartValidator {
+  // Empty txt validation
+  static String? validateEmptyText(String? fieldName, String? value) {
+    if (value == null || value.isEmpty) {
+      return '$fieldName is required';
+    }
+    return null;
+  }
+  //email validation with error message
   static String? validateEmail(String? email) {
     if (email == null || email.isEmpty) {
       return 'Email cannot be empty';
@@ -11,12 +19,7 @@ class MegartValidator {
     }
     return null;
   }
-//password validation: at least 8 characters, at least one letter and one number
-  static bool isValidPassword(String password) {
-    // Password must be at least 8 characters long and contain a mix of letters and numbers
-    final passwordRegex = RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$');
-    return passwordRegex.hasMatch(password);
-  }
+
 //phone number validation: digits only, length between 7 and 15
   static bool isValidPhoneNumber(String phoneNumber) {
     final phoneRegex = RegExp(r'^\+?[0-9]{7,15}$');
@@ -55,6 +58,13 @@ class MegartValidator {
     }
     return null;
   }
+  //password validation: at least 8 characters, at least one letter and one number
+  static bool isValidPassword(String password) {
+    // Password must be at least 8 characters long and contain a mix of letters and numbers
+    final passwordRegex = RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$');
+    return passwordRegex.hasMatch(password);
+  }
+  
   // Check if two passwords match
   static String? validateConfirmPassword(String? password, String? confirmPassword) {
     if (confirmPassword == null || confirmPassword.isEmpty) {

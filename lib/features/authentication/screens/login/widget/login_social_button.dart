@@ -15,7 +15,7 @@ class SocialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: MegamartColors.dGray),
+        border: Border.all(color: MegamartColors.darkGray),
         borderRadius: BorderRadius.circular(100),
       ),
       child: IconButton(

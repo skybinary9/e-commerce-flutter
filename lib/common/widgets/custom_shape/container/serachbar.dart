@@ -30,11 +30,11 @@ class AppBarSerachBarContainer extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Icon(icon, color: MegamartColors.dGray,),
+              Icon(icon, color: MegamartColors.darkGray,),
               const SizedBox(width: MegamartSize.spaceBetweenItems,),
               Text(
                 text,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: dark ? MegamartColors.light : MegamartColors.dGray  ),),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: dark ? MegamartColors.light : MegamartColors.darkGray  ),),
             ],
           ),
         ),

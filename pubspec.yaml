@@ -18,10 +18,16 @@ dependencies:
   url_launcher: ^6.3.2
   smooth_page_indicator: ^1.2.1
   flutter_native_splash: ^2.4.7
+  connectivity_plus: ^7.0.0
+  lottie: ^3.3.1
+
 
   #firebase
   firebase_core: ^4.2.1
   flutterfix: ^1.3.0
+  firebase_auth: ^6.1.3
+  cloud_firestore: ^6.1.1
+  
 
 
   # Icons
@@ -31,6 +37,7 @@ dependencies:
   # State management
   get: ^4.7.2
   get_storage: ^2.1.1
+
 
 dev_dependencies:
   flutter_test:
@@ -46,6 +53,7 @@ flutter:
     - assets/images/
     - assets/images/on_boarding_images/
     - assets/logos/
+    - assets/animation/
 
   fonts:
     - family: Poppins

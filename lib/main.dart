@@ -1,7 +1,6 @@
 import 'package:ecommerce_final_year_project/aap.dart';
 import 'package:ecommerce_final_year_project/data/repositories/authentication_repository.dart';
 import 'package:ecommerce_final_year_project/firebase_options.dart';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';

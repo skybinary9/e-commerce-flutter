@@ -20,28 +20,20 @@ class OnboardingController extends GetxController {
   }
 
   void nextPage() {
-    final storage = GetStorage();
-
-    if (kDebugMode) {
-      print('=============== GetStorage Next Button =============');
-      print("isFirstTime: ${storage.read('isFirstTime')}");
-    }
-
-    // Save onboarding completion
-    storage.write('isFirstTime', false);
-
-    if (currentIndex.value < 2) {
-      pageController.jumpToPage(currentIndex.value + 1);
-    } else {
-      Get.off(() => const LoginScreen());
-    }
-  }
-
-  void skipPage() {
+  if (currentIndex.value < 2) {
+    pageController.jumpToPage(currentIndex.value + 1);
+  } else {
     final storage = GetStorage();
     storage.write('isFirstTime', false);
-
-    currentIndex.value = 2;
-    pageController.jumpToPage(2);
+    Get.offAll(() => const LoginScreen());
   }
+}
+
+
+ void skipPage() {
+  final storage = GetStorage();
+  storage.write('isFirstTime', false);
+
+  Get.offAll(() => const LoginScreen());
+}
 }

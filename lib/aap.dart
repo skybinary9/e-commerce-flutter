@@ -1,4 +1,6 @@
+import 'package:ecommerce_final_year_project/bindings/genral_biding.dart';
 import 'package:ecommerce_final_year_project/data/repositories/authentication_repository.dart';
+import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,13 +15,17 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MegamartTheme.lighTheme,
       darkTheme: MegamartTheme.darkTheme,
+      initialBinding: GeneralBidding(),
       home: const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+        backgroundColor: MegamartColors.primary,
+        body: Center(
+          child: CircularProgressIndicator(
+            color: Colors.white,
+          ),
+        ),
       ),
-      initialBinding: BindingsBuilder(() {
-        Get.put(AuthenticationRepository());
-      }),
-      );
-    
+    );
+      
+      
   }
 }

@@ -1,7 +1,9 @@
+import 'package:ecommerce_final_year_project/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TermsCondition extends StatelessWidget {
   const TermsCondition({
@@ -13,15 +15,19 @@ class TermsCondition extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = SignupController.instance;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           width: 24,
           height: 24,
-          child: Checkbox(
-            value: true,
-            onChanged: (value) {},
+          child: Obx(
+            ()=>
+            Checkbox(
+              value: controller.privacyPolicy.value,
+              onChanged: (value) => controller.privacyPolicy.value = !controller.privacyPolicy.value,
+            ),
           ),
         ),
         const SizedBox(width: MegamartSize.defaultSpace),
