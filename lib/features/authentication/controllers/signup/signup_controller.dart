@@ -6,7 +6,6 @@ import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dar
 import 'package:ecommerce_final_year_project/utils/helpers/network_manager.dart';
 import 'package:ecommerce_final_year_project/utils/popups/full_screen_loader.dart';
 import 'package:ecommerce_final_year_project/utils/popups/loaders.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
