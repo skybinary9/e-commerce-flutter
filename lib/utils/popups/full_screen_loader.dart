@@ -37,6 +37,10 @@ class EAppScreenLoader {
 
   /// Closes the loading dialog safely
   static void stopLoading() {
-    Navigator.of(Get.overlayContext!).pop();
+  final context = Get.overlayContext;
+  if (context != null && Navigator.of(context).canPop()) {
+    Navigator.of(context).pop();
   }
+}
+
 }

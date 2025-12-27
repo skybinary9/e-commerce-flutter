@@ -1,3 +1,4 @@
+import 'package:ecommerce_final_year_project/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/login_footer.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/signup/widget/signupform.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/signup/widget/termscondition.dart';
@@ -9,7 +10,8 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+   SignupScreen({super.key});
+  final SignupController controller = Get.put(SignupController());
 
   @override
   Widget build(BuildContext context) {

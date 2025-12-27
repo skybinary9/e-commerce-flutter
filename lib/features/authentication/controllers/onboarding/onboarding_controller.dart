@@ -23,16 +23,14 @@ class OnboardingController extends GetxController {
     pageController.jumpToPage(currentIndex.value + 1);
   } else {
     final storage = GetStorage();
-    storage.write('isFirstTime', false);
+    storage.write('IsFirstTime', false);
     Get.offAll(() => const LoginScreen());
   }
 }
 
-
- void skipPage() {
+void skipPage() {
   final storage = GetStorage();
-  storage.write('isFirstTime', false);
-
+  storage.write('IsFirstTime', false);
   Get.offAll(() => const LoginScreen());
 }
 }

@@ -1,47 +1,69 @@
 import 'package:ecommerce_final_year_project/common/styles/megamart_spacing_style.dart';
-import 'package:ecommerce_final_year_project/features/authentication/screens/login/login.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key});
+  const SuccessScreen({
+    super.key,
+    required this.onPressed,
+    required this.title,
+    required this.subtitle,
+    this.image,
+  });
+
+  final Future<void> Function() onPressed;
+  final String title;
+  final String subtitle;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: MegamartPaddingStyle.paddingwithAppbarHeight *2,
+          padding: MegamartPaddingStyle.paddingwithAppbarHeight * 2,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // text tile & subtitle
-              Text(
-                MegamartText.yourAccountCreatedTitle,
-                style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: MegamartSize.spaceBetweenItems),
-              Text(
-                MegamartText.yourAccountCreatedSubtitle,
-                style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center,
-              ),
-              
+
+              /// Optional Image
+              if (image != null)
+                Image.asset(
+                  image!,
+                  height: 180,
+                ),
+
               const SizedBox(height: MegamartSize.spaceBetweenItems),
 
+              /// Title
+              Text(
+                title,
+                style: Theme.of(context).textTheme.headlineMedium,
+                textAlign: TextAlign.center,
+              ),
 
+              const SizedBox(height: MegamartSize.spaceBetweenItems),
 
-              //button
+              /// Subtitle
+              Text(
+                subtitle,
+                style: Theme.of(context).textTheme.labelMedium,
+                textAlign: TextAlign.center,
+              ),
+
+              const SizedBox(height: MegamartSize.spaceBetweenSections),
+
+              /// Continue Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(() => LoginScreen()),
+                  onPressed: ()  => onPressed(),
                   child: Text(MegamartText.toContinue),
                 ),
               ),
-
-            ],),
-        
+            ],
+          ),
         ),
       ),
     );

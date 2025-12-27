@@ -1,5 +1,4 @@
 import 'package:ecommerce_final_year_project/bindings/genral_biding.dart';
-import 'package:ecommerce_final_year_project/data/repositories/authentication_repository.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
