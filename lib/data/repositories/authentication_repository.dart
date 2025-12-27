@@ -26,7 +26,7 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// Redirect user based on auth & verification state
-  screenRedirect() async {
+  Future<void> screenRedirect() async {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailVerified) {
