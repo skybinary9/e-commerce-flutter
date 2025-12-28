@@ -1,5 +1,6 @@
 import 'package:ecommerce_final_year_project/aap.dart';
 import 'package:ecommerce_final_year_project/data/repositories/authentication_repository.dart';
+import 'package:ecommerce_final_year_project/features/authentication/controllers/forgetpassword/forgetpassword_controller.dart';
 import 'package:ecommerce_final_year_project/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ Future<void> main() async {
 
   // Remove splash AFTER navigation logic
   // screenRedirect() will decide which screen to show
+  Get.put(ForgetPasswordController(), permanent: true);
 
 
   // Run the app

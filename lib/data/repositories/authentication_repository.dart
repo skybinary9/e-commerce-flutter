@@ -89,6 +89,27 @@ else {
       throw 'Something went wrong. Please try again.';
     }
   }
+
+  //--------------------- forget password -------------------//
+  
+  Future<void> sendPasswordResetEmail(
+      String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw FirebaseAuthExceptionHandler(e.code).message;
+    } on FirebaseException catch (e) {
+      throw FirebaseExceptionHandler(e.code).message;
+    } on PlatformException catch (e) {
+      throw PlatformExceptionHandler(e.code).message;
+    } on FormatException {
+      throw FormatExceptionHandler.message();
+    } catch (_) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+
   //--------------------- facebook Authentication -------------------//
 
   Future<UserCredential?> signInWithFacebook() async {

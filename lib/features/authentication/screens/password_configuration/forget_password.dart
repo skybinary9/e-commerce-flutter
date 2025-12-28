@@ -1,8 +1,8 @@
-import 'package:ecommerce_final_year_project/features/authentication/screens/password_configuration/reset_password.dart';
+import 'package:ecommerce_final_year_project/features/authentication/controllers/forgetpassword/forgetpassword_controller.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
+import 'package:ecommerce_final_year_project/utils/validators/validator.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ForgetPassword extends StatelessWidget {
@@ -10,6 +10,7 @@ class ForgetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = ForgetPasswordController.instance;
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -25,13 +26,18 @@ class ForgetPassword extends StatelessWidget {
             const SizedBox(height: MegamartSize.defaultSpace),
 
             //text field
-            TextField(
-              decoration: InputDecoration(
-                labelText: MegamartText.email,
-                prefixIcon: const Icon(Iconsax.direct_right),
-                border: OutlineInputBorder(
-                  borderRadius:
-                      BorderRadius.circular(MegamartSize.inputFieldRadius),
+            Form(
+              key: controller.forgetPasswordFormKey,
+              child: TextFormField(
+                controller: controller.email,
+                validator: MegartValidator.validateEmail,
+                decoration: InputDecoration(
+                  labelText: MegamartText.email,
+                  prefixIcon: const Icon(Iconsax.direct_right),
+                  border: OutlineInputBorder(
+                    borderRadius:
+                        BorderRadius.circular(MegamartSize.inputFieldRadius),
+                  ),
                 ),
               ),
             ),
@@ -41,12 +47,8 @@ class ForgetPassword extends StatelessWidget {
             //submit button
             SizedBox(
               width: double.infinity,
-            child: ElevatedButton(onPressed: ()=>Get.off(ResetPassword()), child: Text(MegamartText.submit)))
-              
-            
-
+            child: ElevatedButton(onPressed: ()=>controller.sendPasswordResetEmail(), child: Text(MegamartText.submit)))
           ],
-          
 
         ),
         ),
