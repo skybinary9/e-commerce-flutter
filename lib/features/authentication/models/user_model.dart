@@ -8,6 +8,7 @@ class UserModel {
   final String email;
   String phoneNumber;
   String profilePicture;
+  String username;
 
   UserModel({
     required this.id,
@@ -15,19 +16,30 @@ class UserModel {
     required this.lastName,
     required this.email,
     required this.phoneNumber,
-    required this.profilePicture, required String username,
+    required this.profilePicture,
+    required this.username,
   });
 
   /// Full name
   String get fullName => '$firstName $lastName';
 
-  /// Auto-generated username
-  String get username =>
-      'cwt_${firstName.toLowerCase()}${lastName.toLowerCase()}';
-
   /// Formatted phone number
   String get formattedPhoneNo =>
       MegamartFormatter.formatPhoneNumber(phoneNumber);
+
+  /// Split full name correctly
+  static List<String> nameParts(String fullName) =>
+      fullName.trim().split(' ');
+
+  /// Auto-generated username
+  static String generateUsername(String fullName) {
+    final parts = nameParts(fullName);
+
+    final firstName = parts.isNotEmpty ? parts[0].toLowerCase() : '';
+    final lastName = parts.length > 1 ? parts[1].toLowerCase() : '';
+
+    return 'cwt_$firstName$lastName';
+  }
 
   /// Convert model to JSON (Firestore)
   Map<String, dynamic> toJson() {
@@ -52,7 +64,7 @@ class UserModel {
       firstName: data?['firstName'] ?? '',
       lastName: data?['lastName'] ?? '',
       email: data?['email'] ?? '',
-      username: data?['username']?? '',
+      username: data?['username'] ?? '',
       phoneNumber: data?['phoneNumber'] ?? '',
       profilePicture: data?['profilePicture'] ?? '',
     );

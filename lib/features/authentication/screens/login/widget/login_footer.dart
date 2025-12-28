@@ -1,6 +1,4 @@
-import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/login_social_button.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
-import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
@@ -51,14 +49,7 @@ class LoginFooter extends StatelessWidget {
           const SizedBox(height: MegamartSize.spaceBetweenItems),
 
           /// Social Buttons (Google + Facebook)
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              SocialButton(image: MegamartImages.google),
-              SizedBox(width: MegamartSize.spaceBetweenItems),
-              SocialButton(image: MegamartImages.facebook),
-            ],
-          ),
+          
         ],
       ),
     );

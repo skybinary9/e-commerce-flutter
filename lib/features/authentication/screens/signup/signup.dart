@@ -1,5 +1,6 @@
 import 'package:ecommerce_final_year_project/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/login_footer.dart';
+import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/login_social_button.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/signup/widget/signupform.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/signup/widget/termscondition.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
@@ -50,6 +51,7 @@ class SignupScreen extends StatelessWidget {
 
               // Footer
               const LoginFooter(),
+              SocialButtons(),
             ],
           ),
         ),

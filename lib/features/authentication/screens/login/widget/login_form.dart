@@ -19,7 +19,7 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(LoginController());
     return Form(
-      key: controller.loginformkey,
+      key: controller.loginFormKey,
       child: Padding(
         padding:
             const EdgeInsets.symmetric(vertical: MegamartSize.spaceBetweenSections),

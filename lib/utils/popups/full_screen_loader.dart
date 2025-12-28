@@ -27,7 +27,7 @@ class EAppScreenLoader {
           child: Column(
            children: [
             const SizedBox(height: 250),
-            EAppLoaderWidget(text: text),
+            EAppLoaderWidget(text: text, animation: '',),
            ],
           ),
         ),

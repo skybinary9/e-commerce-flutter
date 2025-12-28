@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -88,7 +89,32 @@ else {
     }
   }
 
-  /*------------------ Email Verification ------------------*/
+//--------------------- Google Authentication -------------------//
+
+Future<UserCredential?> signInWithGoogle() async {
+  try {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+
+    final GoogleSignInAccount? userAccount =
+        await googleSignIn.signIn();
+
+    if (userAccount == null) return null;
+
+    final GoogleSignInAuthentication googleAuth =
+        await userAccount.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    return await _auth.signInWithCredential(credential);
+  } catch (e) {
+    throw 'Google sign-in failed: $e';
+  }
+}
+
+  /*------------------EmaVerification ------------------*/
   Future<void> sendEmailVerification() async {
     try {
       final user = _auth.currentUser;

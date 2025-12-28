@@ -7,6 +7,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:913978065914:android:37ba33e23d5ee792b35a43",
+        "android_client_info": {
+          "package_name": "com.example.e_commerce_flutter_admin_panel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913978065914-0930pft2d753s13cqtdoku8kip32vabu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfqZq-65iiIuk0LoOBhsu3V5UL5Y3HQfA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913978065914-0930pft2d753s13cqtdoku8kip32vabu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "913978065914-pa19jehabu6dtt4lrl3m3sonjtj6v56f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.eCommerceFlutterAdminPanel"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:913978065914:android:2f79cb852719c16bb35a43",
         "android_client_info": {
           "package_name": "com.example.ecommerce_final_year_project"
@@ -39,10 +75,10 @@
               "client_type": 3
             },
             {
-              "client_id": "913978065914-vcoopsheejmrmdmlp95kpd1ge9gp08ih.apps.googleusercontent.com",
+              "client_id": "913978065914-pa19jehabu6dtt4lrl3m3sonjtj6v56f.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.ecommerceFinalYearProject"
+                "bundle_id": "com.example.eCommerceFlutterAdminPanel"
               }
             }
           ]

@@ -4,6 +4,7 @@ import 'package:ecommerce_final_year_project/common/styles/megamart_spacing_styl
 import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/header_login.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/login_footer.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/login_form.dart';
+import 'package:ecommerce_final_year_project/features/authentication/screens/login/widget/login_social_button.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 
@@ -28,6 +29,8 @@ class LoginScreen extends StatelessWidget {
 
               /// 🟢 Footer Section
               LoginFooter(),
+
+              SocialButtons(),
             ],
           ),
         ),

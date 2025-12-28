@@ -1,6 +1,7 @@
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 //import 'package:lottie/lottie.dart';
 
 class EAppLoaderWidget extends StatelessWidget {
@@ -10,11 +11,11 @@ class EAppLoaderWidget extends StatelessWidget {
     //this.animation,
     this.showAction = false,
     this.actionText,
-    this.onActionPressed,
+    this.onActionPressed, required this.animation,
   });
 
   final String text;
-  //final String animation;
+  final String animation;
   final bool showAction;
   final String? actionText;
   final VoidCallback? onActionPressed;
@@ -25,10 +26,10 @@ class EAppLoaderWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          //Lottie.asset(
-            //animation,
-            //width: MediaQuery.of(context).size.width * 0.8,
-          //),
+          Lottie.asset(
+            animation,
+            width: MediaQuery.of(context).size.width * 0.8,
+          ),
 
           const SizedBox(height: MegamartSize.defaultSpace),
 
