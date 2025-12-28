@@ -56,6 +56,40 @@ class LoginController extends GetxController {
     }
   }
 
+  /// Facebook Sign-In Authentication
+Future<void> facebookSignIn() async {
+  try {
+    // Check internet connection
+    final isConnected = await NetworkManager.instance.isConnected();
+    if (!isConnected) return;
+
+    // Optional Loader
+    // EAppScreenLoader.openLoadingDialog();
+
+    // Facebook Authentication
+    final userCredential =
+        await AuthenticationRepository.instance.signInWithFacebook();
+
+    if (userCredential != null) {
+      // Save user record in Firestore
+      await userController.saveUserRecord(userCredential);
+    }
+
+    // Stop loader
+    EAppScreenLoader.stopLoading();
+
+    // Redirect user
+    await AuthenticationRepository.instance.screenRedirect();
+  } catch (e) {
+    EAppScreenLoader.stopLoading();
+    ELoader.errorSnackBar(
+      title: 'Facebook Sign-In',
+      message: e.toString(),
+    );
+  }
+}
+
+
   /// Google Sign-In Authentication
   Future<void> googleSignIn() async {
   try {

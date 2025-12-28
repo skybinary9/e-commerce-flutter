@@ -32,7 +32,7 @@ class SocialButtons extends StatelessWidget {
             decoration: BoxDecoration(border: Border.all(color: MegamartColors.grey),
         borderRadius: BorderRadius.circular(100)),
         child: IconButton(onPressed:()
-         {}, icon: const Image(
+         async {Get.find<LoginController>().facebookSignIn();}, icon: const Image(
           height: MegamartSize.iconMd,
           width: MegamartSize.iconMd,
           image: AssetImage(MegamartImages.facebook))),

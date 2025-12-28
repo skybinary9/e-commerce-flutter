@@ -8,6 +8,7 @@ import 'package:ecommerce_final_year_project/utils/exceptions/format_exceptions.
 import 'package:ecommerce_final_year_project/utils/exceptions/platform_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -88,6 +89,41 @@ else {
       throw 'Something went wrong. Please try again.';
     }
   }
+  //--------------------- facebook Authentication -------------------//
+
+  Future<UserCredential?> signInWithFacebook() async {
+  try {
+    // 1️⃣ Facebook Login
+    final LoginResult result = await FacebookAuth.instance.login(
+      permissions: ['email', 'public_profile'],
+    );
+
+    if (result.status != LoginStatus.success) {
+      return null; // user cancelled
+    }
+
+    // 2️⃣ Create Firebase Credential
+    final OAuthCredential facebookAuthCredential =
+        FacebookAuthProvider.credential(
+      result.accessToken!.token,
+    );
+
+    // 3️⃣ Firebase Sign-In
+    return await _auth.signInWithCredential(facebookAuthCredential);
+
+  } on FirebaseAuthException catch (e) {
+    throw FirebaseAuthExceptionHandler(e.code).message;
+  } on FirebaseException catch (e) {
+    throw FirebaseExceptionHandler(e.code).message;
+  } on PlatformException catch (e) {
+    throw PlatformExceptionHandler(e.code).message;
+  } on FormatException {
+    throw FormatExceptionHandler.message();
+  } catch (_) {
+    throw 'Something went wrong. Please try again.';
+  }
+}
+
 
 //--------------------- Google Authentication -------------------//
 
