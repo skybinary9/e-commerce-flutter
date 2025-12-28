@@ -29,28 +29,35 @@ class AuthenticationRepository extends GetxController {
 
   /// Redirect user based on auth & verification state
   Future<void> screenRedirect() async {
-    final user = _auth.currentUser;
-    if (user != null) {
-      if (user.emailVerified) {
-        Get.offAll(() => const NavigationMenu());  // home
-        } else {
-          Get.offAll(() => VerifyEmailScreen(
-            email: user.email,
-            ));
-  }
-  } 
-else {
-      // First-time check
-      deviceStorage.writeIfNull('IsFirstTime', true);
-      final isFirstTime = deviceStorage.read('IsFirstTime') as bool;
+  final user = _auth.currentUser;
 
-      if (isFirstTime) {
-        Get.offAll(() => const Onboarding());
-      } else {
-        Get.offAll(() => const LoginScreen());
-      }
+  if (user != null) {
+    final providerIds = user.providerData.map((e) => e.providerId);
+
+    // ✅ Google or Facebook login
+    if (providerIds.contains('google.com') ||
+        providerIds.contains('facebook.com')) {
+      Get.offAll(() => const NavigationMenu());
+      return;
+    }
+
+    // ✅ Email & Password login
+    if (user.emailVerified) {
+      Get.offAll(() => const NavigationMenu());
+    } else {
+      Get.offAll(() => VerifyEmailScreen(email: user.email));
+    }
+  } else {
+    deviceStorage.writeIfNull('IsFirstTime', true);
+    final isFirstTime = deviceStorage.read('IsFirstTime') as bool;
+
+    if (isFirstTime) {
+      Get.offAll(() => const Onboarding());
+    } else {
+      Get.offAll(() => const LoginScreen());
     }
   }
+}
 
   /*------------------ Email & Password Register ------------------*/
 

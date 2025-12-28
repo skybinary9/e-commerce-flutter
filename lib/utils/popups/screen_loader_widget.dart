@@ -1,7 +1,7 @@
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+//import 'package:lottie/lottie.dart';
 //import 'package:lottie/lottie.dart';
 
 class EAppLoaderWidget extends StatelessWidget {
@@ -26,10 +26,10 @@ class EAppLoaderWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Lottie.asset(
+          /*Lottie.asset(
             animation,
             width: MediaQuery.of(context).size.width * 0.8,
-          ),
+          ),*/
 
           const SizedBox(height: MegamartSize.defaultSpace),
 

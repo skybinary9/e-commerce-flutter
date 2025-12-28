@@ -2,7 +2,6 @@ import 'package:ecommerce_final_year_project/data/repositories/authentication_re
 import 'package:ecommerce_final_year_project/data/repositories/user_repository.dart';
 import 'package:ecommerce_final_year_project/features/authentication/models/user_model.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/signup/verify_email.dart';
-import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/network_manager.dart';
 import 'package:ecommerce_final_year_project/utils/popups/full_screen_loader.dart';
 import 'package:ecommerce_final_year_project/utils/popups/loaders.dart';
@@ -29,10 +28,10 @@ class SignupController extends GetxController {
   void signup() async {
     try {
       /// Start loader
-      EAppScreenLoader.openLoadingDialog(
-        'We are processing your information...', MegamartImages.lottieAnamtion,
+      /*EAppScreenLoader.openLoadingDialog(
+        'We are processing your information...' /*MegamartImages.lottieAnamtion,*/
         
-      );
+      );*/
 
       /// Check internet
       final isConnected = await NetworkManager.instance.isConnected();
@@ -54,7 +53,6 @@ class SignupController extends GetxController {
       final userCredential = await AuthenticationRepository.instance.createWithEmailPassword(email.text.trim(), password.text.trim());
 
 
-      /// Save user data in Firestore
       /// Save user data in Firestore
     final newUser = UserModel(
       id: userCredential.user!.uid, // ✅ Correct way

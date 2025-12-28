@@ -3,6 +3,8 @@ import 'package:ecommerce_final_year_project/common/widgets/custom_shape/contain
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/serachbar.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/widget/home_appbar.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/widget/homecetagroies.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/widget/promo_slider.dart';
+import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -46,9 +48,14 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: MegamartSize.spaceBetweenItems),
 
                   /// Categories List
-                  HomeCetagories(),
+                  const HomeCetagories(),
                 ],
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(MegamartSize.defaultSpace),
+              child: EpromoSlider(banners: [MegamartImages.promo, MegamartImages.promo2, MegamartImages.promo3],),
+              
             ),
           ],
         ),

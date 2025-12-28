@@ -10,8 +10,14 @@ class MegamartImages {
   static const String onboard1 = "assets/images/on_boarding_images/N-jGxXF8OA4CiLPj.webp";
   static const String onboard2 = "assets/images/on_boarding_images/W0iC3VSphSSO0wcW.png";
 
-  /// ---- animation 
-  static const String lottieAnamtion = "assets/animation/Loading Animation.mp4";
+  /// ---- animation lottie
+  /// 
+  /// ------ promo banner
+  static const String promo  = "assets/images/banners/arrangement-black-friday-shopping-carts-with-copy-space.jpg";
+  static const String promo2  = "assets/images/banners/cyber-monday-retail-sales.jpg";
+  static const String promo3  = "assets/images/banners/download-promo.jpeg";
+  
+  
 
   
 
