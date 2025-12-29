@@ -3,7 +3,6 @@ import 'package:ecommerce_final_year_project/common/widgets/custom_shape/contain
 import 'package:ecommerce_final_year_project/common/widgets/images/e-Rounded_images.dart';
 import 'package:ecommerce_final_year_project/features/shop/controllers/home_controller.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
-import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

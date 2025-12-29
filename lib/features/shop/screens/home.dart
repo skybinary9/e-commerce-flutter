@@ -1,6 +1,8 @@
-import 'package:ecommerce_final_year_project/common/text/headertext.dart';
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/primary_header_container.dart';
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/serachbar.dart';
+import 'package:ecommerce_final_year_project/common/widgets/layout/gridVeiw.dart';
+import 'package:ecommerce_final_year_project/common/widgets/product/product_cart/product_cart_verticale.dart';
+import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/widget/home_appbar.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/widget/homecetagroies.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/widget/promo_slider.dart';
@@ -18,14 +20,19 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+
+            /// HEADER SECTION
             PrimaryHeaderContainer(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  /// Home AppBar
+
+                  /// App Bar
                   const HomeAppBar(),
 
-                  const SizedBox(height: MegamartSize.spaceBetweenItems),
+                  const SizedBox(
+                    height: MegamartSize.spaceBetweenItems,
+                  ),
 
                   /// Search Bar
                   const AppBarSerachBarContainer(
@@ -33,29 +40,58 @@ class HomeScreen extends StatelessWidget {
                     icon: Iconsax.search_normal,
                   ),
 
-                  const SizedBox(height: MegamartSize.spaceBetweenSections),
+                  const SizedBox(
+                    height: MegamartSize.spaceBetweenSections,
+                  ),
 
                   /// Section Heading
                   const Padding(
                     padding: EdgeInsets.only(
                       left: MegamartSize.defaultSpace,
                     ),
-                    child:  SectionHeading(
+                    child: SectionHeading(
                       title: 'Popular Categories',
                     ),
                   ),
 
-                  const SizedBox(height: MegamartSize.spaceBetweenItems),
+                  const SizedBox(
+                    height: MegamartSize.spaceBetweenItems,
+                  ),
 
-                  /// Categories List
+                  /// Categories
                   const HomeCetagories(),
                 ],
               ),
             ),
+
+            /// BODY SECTION
             Padding(
-              padding: const EdgeInsets.all(MegamartSize.defaultSpace),
-              child: EpromoSlider(banners: [MegamartImages.promo, MegamartImages.promo2, MegamartImages.promo3],),
-              
+              padding: const EdgeInsets.all(
+                MegamartSize.defaultSpace,
+              ),
+              child: Column(
+                children: [
+
+                  /// Promo Slider
+                  const EpromoSlider(
+                    banners: [
+                      MegamartImages.promo,
+                      MegamartImages.promo2,
+                      MegamartImages.promo3,
+                    ],
+                  ),
+
+
+                  //heading
+                  //const 
+                  const SizedBox(
+                    height: MegamartSize.spaceBetweenItems,
+                  ),
+
+                  /// Popular Products
+                  EGridView(itemCount: 4, itemBuilder: (_, index)=> const ProductCartVertical(),),
+                ],
+              ),
             ),
           ],
         ),

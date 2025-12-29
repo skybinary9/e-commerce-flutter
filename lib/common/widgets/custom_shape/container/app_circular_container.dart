@@ -6,7 +6,7 @@ class AppCircularContainer extends StatelessWidget {
     super.key,
     this.width = 400,
     this.height = 400,  
-    this.padding = 0,
+    this.padding ,
     this.radius = 400,
     this.child,
     this.backgroundColor = MegamartColors.white, 
@@ -14,7 +14,7 @@ class AppCircularContainer extends StatelessWidget {
   });
   final double? width;
   final double? height;
-  final double padding;
+  final EdgeInsets? padding;
   final double radius;
   final EdgeInsets? margin;
   final Widget? child;
@@ -26,7 +26,7 @@ class AppCircularContainer extends StatelessWidget {
       width: width,
       height: height,
       margin: margin,
-      padding: EdgeInsets.all(padding),
+      padding: EdgeInsets.all(0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
         color: backgroundColor,

@@ -16,6 +16,12 @@ class MegamartImages {
   static const String promo  = "assets/images/banners/arrangement-black-friday-shopping-carts-with-copy-space.jpg";
   static const String promo2  = "assets/images/banners/cyber-monday-retail-sales.jpg";
   static const String promo3  = "assets/images/banners/download-promo.jpeg";
+
+  ///Product
+  static const String latop  = "assets/images/products/laptop1.jpeg";
+  static const String keyboard  = "assets/images/products/keyboard.jpeg";
+  static const String mouse = "assets/images/products/mouse.jpeg";
+  
   
   
 
