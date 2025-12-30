@@ -22,6 +22,14 @@ class TabViewCetagroies extends StatelessWidget {
             MegamartImages.mouse,
             MegamartImages.keyboard,
           ],
+          
+        ),
+        const EBandShowCase(
+          images: [
+            MegamartImages.latop,
+            MegamartImages.mouse,
+            MegamartImages.keyboard,
+          ],
         ),
 
         const SizedBox(height: MegamartSize.defaultSpace),
