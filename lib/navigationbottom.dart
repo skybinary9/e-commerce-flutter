@@ -1,4 +1,5 @@
 import 'package:ecommerce_final_year_project/features/shop/screens/home/home.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/setting_profile/setting_profile.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/store/store.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/wishlist/wishlist.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
@@ -45,6 +46,6 @@ class NavigationController extends GetxController {
     const HomeScreen(),
     const EStoreScreen(),
     const WishlistScreen(),
-    const Center(child: Text('Profile Screen')),
+    const SettingProfile(),
   ];
 }

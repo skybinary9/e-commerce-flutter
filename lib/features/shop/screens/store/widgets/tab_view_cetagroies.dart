@@ -44,7 +44,7 @@ class TabViewCetagroies extends StatelessWidget {
 
         EGridView(
           itemCount: 4,
-          mainAxisExtent: 360,
+          mainAxisExtent: 305,
           itemBuilder: (_, index) => const ProductCartVertical(),
         ),
       ],

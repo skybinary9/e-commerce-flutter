@@ -42,6 +42,7 @@ class LoginController extends GetxController {
       }
 
       // Sign in
+      // ignore: unused_local_variable
       final userCredential = await AuthenticationRepository.instance
           .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 

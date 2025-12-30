@@ -54,9 +54,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(
-                    height: MegamartSize.spaceBetweenItems,
-                  ),
+                  SizedBox(height: MegamartSize.spaceBetweenItems,),
 
                   /// Categories
                   const HomeCetagories(),
@@ -80,8 +78,6 @@ class HomeScreen extends StatelessWidget {
                       MegamartImages.promo3,
                     ],
                   ),
-
-
                   //heading
                   const SectionHeading(title: 'Papular Products',), 
                   const SizedBox(
@@ -89,10 +85,11 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   /// Popular Products
-                  EGridView(itemCount: 4, mainAxisExtent: 330, itemBuilder: (_, index)=> const ProductCartVertical(),),
+                  EGridView(itemCount: 4, mainAxisExtent: 305, itemBuilder: (_, index)=> const ProductCartVertical(),),
                 ],
               ),
             ),
+            const SizedBox(height: MegamartSize.spaceBetweenItems,)
           ],
         ),
       ),

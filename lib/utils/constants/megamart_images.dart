@@ -10,6 +10,10 @@ class MegamartImages {
   static const String onboard1 = "assets/images/on_boarding_images/N-jGxXF8OA4CiLPj.webp";
   static const String onboard2 = "assets/images/on_boarding_images/W0iC3VSphSSO0wcW.png";
 
+  ///----user-images
+  static const String userimage = "assets/images/user/user-image.jpg";
+  static const String userimage1 = "assets/images/user/userimage1.jpeg";
+
   /// ---- animation lottie
   /// 
   /// ------ promo banner

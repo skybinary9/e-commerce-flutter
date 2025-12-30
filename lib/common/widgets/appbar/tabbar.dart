@@ -21,6 +21,5 @@ class ETabBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(MegamartDeviceUtility.getappBarHeight());
 }

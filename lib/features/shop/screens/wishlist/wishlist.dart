@@ -25,7 +25,7 @@ class WishlistScreen extends StatelessWidget {
           padding: EdgeInsets.all(MegamartSize.defaultSpace),
           child: Column(
             children: [
-              EGridView(itemCount: 4, mainAxisExtent: 330,itemBuilder: (_, index) => const ProductCartVertical(),)
+              EGridView(itemCount: 4, mainAxisExtent: 305,itemBuilder: (_, index) => const ProductCartVertical(),)
             ],
           ),
         ),

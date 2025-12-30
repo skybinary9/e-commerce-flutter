@@ -38,7 +38,6 @@ class ECircularImage extends StatelessWidget {
         image: isNetworkImag ? NetworkImage(image) :AssetImage(image) as ImageProvider,
         color: overlayColor,
         ),
-    
-                            );
+      );
   }
 }

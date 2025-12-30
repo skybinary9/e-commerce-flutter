@@ -12,8 +12,8 @@ class PrimaryHeaderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedEdgeWidget(
-      child : Container(color: MegamartColors.primary, padding: const EdgeInsets.all(0),
-      child: SizedBox( height: 400,
+      child : Container(
+        color: MegamartColors.primary, 
       child: Stack(
         children: [
           Positioned(top: -150, right: -250, child: AppCircularContainer(backgroundColor: MegamartColors.textWhite.withOpacity(0.1),)),
@@ -21,7 +21,6 @@ class PrimaryHeaderContainer extends StatelessWidget {
           child,
           ],
         ),
-      ),
     ),
    );
   }
