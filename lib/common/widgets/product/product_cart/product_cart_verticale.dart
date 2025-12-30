@@ -33,7 +33,6 @@ class ProductCartVertical extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min, // ✅ overflow safety
           children: [
-
             /// IMAGE SECTION
             AppCircularContainer(
               height: 180,
@@ -107,7 +106,7 @@ class ProductCartVertical extends StatelessWidget {
 
                   const SizedBox(height: MegamartSize.spaceBetweenItems / 2),
 
-                  const EBrandTitleText(title: 'Green Nike Air Shoes'),
+                  const EBrandTitleText(title: 'Green es'),
 
                   const SizedBox(height: MegamartSize.spaceBetweenItems / 2),
 

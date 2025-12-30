@@ -7,7 +7,7 @@ class AppCircularContainer extends StatelessWidget {
     this.width,
     this.height,
     this.padding,
-    this.radius = 12,
+    this.radius =16,
     this.child,
     this.backgroundColor = MegamartColors.white,
     this.margin,
