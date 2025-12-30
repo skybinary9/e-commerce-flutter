@@ -39,7 +39,7 @@ class EcircularIcon extends StatelessWidget {
        ),
        child: IconButton(
         onPressed: onPressed,
-         icon: const Icon(Iconsax.heart),
+         icon: Icon(icon),
          
        ),
      );

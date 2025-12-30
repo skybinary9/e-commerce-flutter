@@ -24,19 +24,20 @@ class ProductCartVertical extends StatelessWidget {
       onTap: () {},
       child: Container(
         width: 180,
+        padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [EShadow.verticalProdutShadow],
           borderRadius: BorderRadius.circular(MegamartSize.productImageRadius),
           color: dark ? MegamartColors.darkerGray : MegamartColors.white,
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min, // ✅ overflow safety
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          //mainAxisSize: MainAxisSize.min, // ✅ overflow safety
           children: [
             /// IMAGE SECTION
             AppCircularContainer(
               height: 180,
-              padding: EdgeInsets.zero,
+              padding: EdgeInsets.all(MegamartSize.sm),
               radius: MegamartSize.productImageRadius,
               backgroundColor:
                   dark ? MegamartColors.dark : MegamartColors.light,
@@ -47,40 +48,31 @@ class ProductCartVertical extends StatelessWidget {
                     child: ERoundImage(
                       imgeUrl: MegamartImages.mouse,
                       applyImageRadius: true,
-                      fit: BoxFit.cover,
                     ),
                   ),
 
                   /// Sale Badge
                   Positioned(
                     top: 12,
-                    left: 12,
-                    child: Container(
+                    child: AppCircularContainer(
+                      radius: MegamartSize.sm,
+                      backgroundColor: MegamartColors.secondary.withOpacity(0.8),
                       padding: const EdgeInsets.symmetric(
                         horizontal: MegamartSize.sm,
                         vertical: MegamartSize.xS,
                       ),
-                      decoration: BoxDecoration(
-                        color: MegamartColors.secondary.withOpacity(0.9),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
                       child: Text(
-                        '25%',
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelLarge!
-                            .copyWith(
+                        '25%', style: Theme.of(context).textTheme.labelLarge!.copyWith(
                               color: MegamartColors.black,
                               fontWeight: FontWeight.w600,
                             ),
                       ),
                     ),
                   ),
-
                   /// Wishlist Icon
                   const Positioned(
-                    top: 8,
-                    right: 8,
+                    top: 0,
+                    right: 0,
                     child: EcircularIcon(
                       icon: Iconsax.heart5,
                       color: Colors.red,
@@ -94,59 +86,63 @@ class ProductCartVertical extends StatelessWidget {
 
             /// PRODUCT DETAILS + PRICE
             Padding(
-              padding: const EdgeInsets.all(MegamartSize.sm),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  const EText(
-                    title: 'Mouse laptop',
-                    smallSize: true,
+              padding: const EdgeInsets.symmetric(horizontal: MegamartSize.sm),
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const EText(
+                      title: 'Mouse laptop',
+                      smallSize: true,
+                    ),
+                
+                    const SizedBox(height: MegamartSize.spaceBetweenItems / 2),
+                
+                    const EBrandTitleText(title: 'Green es'),
+                
+                    const SizedBox(height: MegamartSize.spaceBetweenItems / 2),
+                
+                    const ETexBranWithVerifyIcon(tilte: 'Nike'),
+                
+                    const SizedBox(height: MegamartSize.spaceBetweenItems),
+                
+                  ],
+                ),
+              ),
+            ),
+            const Spacer(),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: MegamartSize.sm),
+                  child: const ProductPriceText(price: '35.0'),
                   ),
-
-                  const SizedBox(height: MegamartSize.spaceBetweenItems / 2),
-
-                  const EBrandTitleText(title: 'Green es'),
-
-                  const SizedBox(height: MegamartSize.spaceBetweenItems / 2),
-
-                  const ETexBranWithVerifyIcon(tilte: 'Nike'),
-
-                  const SizedBox(height: MegamartSize.spaceBetweenItems),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-
-                      const ProductPriceText(price: '35.0'),
-
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: MegamartColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft:
-                                Radius.circular(MegamartSize.cardRadiusMd),
-                            bottomRight: Radius.circular(
-                                MegamartSize.productImageRadius),
-                          ),
+                  const Spacer(), // 👈 pushes icon to right
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: MegamartColors.dark,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(MegamartSize.cardRadiusMd),
+                        bottomRight:
+                        Radius.circular(MegamartSize.productImageRadius),
+                        ),
                         ),
                         child: const SizedBox(
                           width: MegamartSize.iconLg,
                           height: MegamartSize.iconLg,
                           child: Icon(
                             Iconsax.add,
+                            size: 30,
                             color: MegamartColors.white,
+                            ),
                           ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+            );
+          }
+        }

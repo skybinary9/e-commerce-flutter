@@ -3,9 +3,9 @@ import 'package:ecommerce_final_year_project/common/widgets/custom_shape/contain
 import 'package:ecommerce_final_year_project/common/widgets/layout/gridveiw.dart';
 import 'package:ecommerce_final_year_project/common/widgets/product/product_cart/product_cart_verticale.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';
-import 'package:ecommerce_final_year_project/features/shop/screens/widget/home_appbar.dart';
-import 'package:ecommerce_final_year_project/features/shop/screens/widget/homecetagroies.dart';
-import 'package:ecommerce_final_year_project/features/shop/screens/widget/promo_slider.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/home/widget/home_appbar.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/home/widget/homecetagroies.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/home/widget/promo_slider.dart';
 import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';

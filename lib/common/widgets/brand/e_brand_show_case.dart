@@ -2,7 +2,6 @@
 import 'package:ecommerce_final_year_project/common/widgets/brand/e_brand_cad.dart';
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/app_circular_container.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
-import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
