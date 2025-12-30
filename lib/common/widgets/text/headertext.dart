@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 
 class SectionHeading extends StatelessWidget {
   const SectionHeading({
-    super.key, required this.title, this.buttonTitle = "View All", this.textColor, this.showactionButton = true, this.onButtonTap,
+    super.key, 
+    required this.title, 
+    this.buttonTitle = "View All", 
+    this.textColor, 
+    this.showactionButton = true, 
+    this.onPressed,
   });
 
   final String title, buttonTitle;
   final Color? textColor;
   final bool showactionButton;
-  final void Function()? onButtonTap;
+  final void Function()? onPressed;
 
 
   @override
@@ -18,7 +23,7 @@ class SectionHeading extends StatelessWidget {
         Text( title, 
         style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: textColor), 
         maxLines: 1, overflow: TextOverflow.ellipsis,),
-        if (showactionButton) TextButton(onPressed: onButtonTap, child: Text( buttonTitle,))
+        if (showactionButton) TextButton(onPressed: onPressed, child: Text( buttonTitle,))
       ],
     );
   }

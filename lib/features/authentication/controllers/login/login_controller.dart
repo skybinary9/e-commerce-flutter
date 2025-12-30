@@ -55,7 +55,7 @@ class LoginController extends GetxController {
       ELoader.errorSnackBar(title: 'On Snap', message: e.toString());
     }
   }
-
+/*
   /// Facebook Sign-In Authentication
 Future<void> facebookSignIn() async {
   try {
@@ -87,7 +87,7 @@ Future<void> facebookSignIn() async {
       message: e.toString(),
     );
   }
-}
+}*/
 
 
   /// Google Sign-In Authentication

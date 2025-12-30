@@ -27,7 +27,7 @@ class SocialButtons extends StatelessWidget {
           width: MegamartSize.iconMd,
           image: AssetImage(MegamartImages.google))),
           ),
-          const SizedBox(width: MegamartSize.spaceBetweenItems,),
+          /*const SizedBox(width: MegamartSize.spaceBetweenItems,),
           Container(
             decoration: BoxDecoration(border: Border.all(color: MegamartColors.grey),
         borderRadius: BorderRadius.circular(100)),
@@ -36,7 +36,7 @@ class SocialButtons extends StatelessWidget {
           height: MegamartSize.iconMd,
           width: MegamartSize.iconMd,
           image: AssetImage(MegamartImages.facebook))),
-          )
+          )*/
         ],
         );  
   }

@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/app_circular_container.dart';
-import 'package:ecommerce_final_year_project/common/widgets/images/e-Rounded_images.dart';
+import 'package:ecommerce_final_year_project/common/widgets/images/e_rounded_images.dart';
 import 'package:ecommerce_final_year_project/features/shop/controllers/home_controller.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';

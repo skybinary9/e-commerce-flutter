@@ -1,11 +1,12 @@
 import 'package:get/get.dart';
 
-class HomeController extends GetxController{
+class HomeController extends GetxController {
   static HomeController get instance => Get.find();
 
-  final carouselCurrentIndex = 0.obs;
+  final RxInt carouselCurrentIndex = 0.obs;
 
-  void updatePageIndicator(index){
+  // ignore: strict_top_level_inference
+  void updatePageIndicator(index) {
     carouselCurrentIndex.value = index;
   }
 }

@@ -1,5 +1,4 @@
-
-import 'package:ecommerce_final_year_project/common/widgets/product/product_cart/product_cart_verticale.dart';
+// ignore_for_file: file_names
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
 

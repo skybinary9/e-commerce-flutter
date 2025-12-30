@@ -8,7 +8,7 @@ import 'package:ecommerce_final_year_project/utils/exceptions/format_exceptions.
 import 'package:ecommerce_final_year_project/utils/exceptions/platform_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+//import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -116,7 +116,7 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-
+/*
   //--------------------- facebook Authentication -------------------//
 
   Future<UserCredential?> signInWithFacebook() async {
@@ -151,7 +151,7 @@ class AuthenticationRepository extends GetxController {
     throw 'Something went wrong. Please try again.';
   }
 }
-
+*/
 
 //--------------------- Google Authentication -------------------//
 

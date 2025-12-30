@@ -6,12 +6,19 @@ import 'package:flutter/material.dart';
 
 class AppBarSerachBarContainer extends StatelessWidget {
   const AppBarSerachBarContainer({
-    super.key, required this.text, this.icon,  this.showBackGround = true,  this.showBorder = true, this.onTap,
+    super.key, 
+    required this.text, 
+    this.icon,  
+    this.showBackGround = true,  
+    this.showBorder = true, 
+    this.onTap, 
+    this.padding = const EdgeInsets.symmetric(horizontal: MegamartSize.defaultSpace),
   });
   final String text;
   final IconData? icon;
   final bool showBackGround, showBorder;
   final void Function()? onTap;
+  final EdgeInsetsGeometry  padding;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +26,7 @@ class AppBarSerachBarContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: MegamartSize.defaultSpace),
+        padding: padding,
         child: Container(
           width: MegamartDeviceUtility.getScreenwidth(context),
           padding: const EdgeInsets.all(MegamartSize.md),

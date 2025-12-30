@@ -1,6 +1,6 @@
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/primary_header_container.dart';
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/serachbar.dart';
-import 'package:ecommerce_final_year_project/common/widgets/layout/gridVeiw.dart';
+import 'package:ecommerce_final_year_project/common/widgets/layout/gridveiw.dart';
 import 'package:ecommerce_final_year_project/common/widgets/product/product_cart/product_cart_verticale.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/widget/home_appbar.dart';
@@ -83,13 +83,13 @@ class HomeScreen extends StatelessWidget {
 
 
                   //heading
-                  //const 
+                  const SectionHeading(title: 'Papular Products',), 
                   const SizedBox(
                     height: MegamartSize.spaceBetweenItems,
                   ),
 
                   /// Popular Products
-                  EGridView(itemCount: 4, itemBuilder: (_, index)=> const ProductCartVertical(),),
+                  EGridView(itemCount: 4, mainAxisExtent: 330, itemBuilder: (_, index)=> const ProductCartVertical(),),
                 ],
               ),
             ),

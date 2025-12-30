@@ -5,7 +5,14 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class EAppbar extends StatelessWidget implements PreferredSizeWidget {
-    const EAppbar({super.key, this.leadingIcon, this.title, required this.showbackArrow, this.actions, this.leadingOnPressed});
+    const EAppbar({super.key, 
+    this.leadingIcon, 
+    this.title, 
+    this.showbackArrow = false, 
+    this.actions, 
+    this.leadingOnPressed
+    });
+
     final IconData? leadingIcon;
     final Widget? title;  
     final bool showbackArrow;

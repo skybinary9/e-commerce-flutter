@@ -1,7 +1,9 @@
 import 'package:ecommerce_final_year_project/common/styles/shadow.dart';
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/app_circular_container.dart';
-import 'package:ecommerce_final_year_project/common/widgets/icon/E_icon.dart';
-import 'package:ecommerce_final_year_project/common/widgets/images/e-Rounded_images.dart';
+import 'package:ecommerce_final_year_project/common/widgets/icon/e_icon.dart';
+import 'package:ecommerce_final_year_project/common/widgets/images/e_rounded_images.dart';
+import 'package:ecommerce_final_year_project/common/widgets/text/brand_title_text.dart';
+import 'package:ecommerce_final_year_project/common/widgets/text/e_text_verify_icon.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/price_text.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/product_title.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
@@ -19,7 +21,7 @@ class ProductCartVertical extends StatelessWidget {
     final dark = HelperFunction.isDarkMode(context);
 
     return GestureDetector(
-      onTap: (){},
+      onTap: () {},
       child: Container(
         width: 180,
         decoration: BoxDecoration(
@@ -29,8 +31,9 @@ class ProductCartVertical extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min, // ✅ overflow safety
           children: [
-      
+
             /// IMAGE SECTION
             AppCircularContainer(
               height: 180,
@@ -40,8 +43,7 @@ class ProductCartVertical extends StatelessWidget {
                   dark ? MegamartColors.dark : MegamartColors.light,
               child: Stack(
                 children: [
-      
-                  /// Product Image
+
                   const Positioned.fill(
                     child: ERoundImage(
                       imgeUrl: MegamartImages.mouse,
@@ -49,7 +51,7 @@ class ProductCartVertical extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-      
+
                   /// Sale Badge
                   Positioned(
                     top: 12,
@@ -75,7 +77,7 @@ class ProductCartVertical extends StatelessWidget {
                       ),
                     ),
                   ),
-      
+
                   /// Wishlist Icon
                   const Positioned(
                     top: 8,
@@ -88,55 +90,37 @@ class ProductCartVertical extends StatelessWidget {
                 ],
               ),
             ),
-      
-            /// SPACE
+
             const SizedBox(height: MegamartSize.spaceBetweenItems / 2),
-      
-            /// PRODUCT DETAILS
+
+            /// PRODUCT DETAILS + PRICE
             Padding(
               padding: const EdgeInsets.all(MegamartSize.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-      
-                  /// Product Title
+
                   const EText(
                     title: 'Mouse laptop',
                     smallSize: true,
                   ),
-      
-                  const SizedBox(
-                    height: MegamartSize.spaceBetweenItems / 2,
-                  ),
-      
-                  /// Brand Name + Verified
-                  Row(
-                    children: const [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                      ),
-                      SizedBox(width: MegamartSize.xS),
-                      Icon(
-                        Iconsax.verify,
-                        color: MegamartColors.primary,
-                        size: MegamartSize.iconXs,
-                      ),
-                    ],
-                  ),
-      
+
+                  const SizedBox(height: MegamartSize.spaceBetweenItems / 2),
+
+                  const EBrandTitleText(title: 'Green Nike Air Shoes'),
+
+                  const SizedBox(height: MegamartSize.spaceBetweenItems / 2),
+
+                  const ETexBranWithVerifyIcon(tilte: 'Nike'),
+
                   const SizedBox(height: MegamartSize.spaceBetweenItems),
-      
-                  /// PRICE + ADD BUTTON
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-      
-                      /// Price
-                      const ProductPriceText(Price: '35.0',),
-      
-                      /// Add Button
+
+                      const ProductPriceText(price: '35.0'),
+
                       Container(
                         decoration: const BoxDecoration(
                           color: MegamartColors.dark,
@@ -167,4 +151,3 @@ class ProductCartVertical extends StatelessWidget {
     );
   }
 }
-

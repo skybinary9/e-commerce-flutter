@@ -21,6 +21,11 @@ class MegamartImages {
   static const String latop  = "assets/images/products/laptop1.jpeg";
   static const String keyboard  = "assets/images/products/keyboard.jpeg";
   static const String mouse = "assets/images/products/mouse.jpeg";
+
+  //icon
+  static const String clothicon = "assets/icons/clothicon.png";
+
+
   
   
   

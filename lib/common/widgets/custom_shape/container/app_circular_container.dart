@@ -4,14 +4,18 @@ import 'package:flutter/material.dart';
 class AppCircularContainer extends StatelessWidget {
   const AppCircularContainer({
     super.key,
-    this.width = 400,
-    this.height = 400,  
-    this.padding ,
-    this.radius = 400,
+    this.width,
+    this.height,
+    this.padding,
+    this.radius = 12,
     this.child,
-    this.backgroundColor = MegamartColors.white, 
+    this.backgroundColor = MegamartColors.white,
     this.margin,
+    this.showBorder = false,
+    this.borderColor = Colors.white,
+    this.borderWidth = 1,
   });
+
   final double? width;
   final double? height;
   final EdgeInsets? padding;
@@ -20,16 +24,27 @@ class AppCircularContainer extends StatelessWidget {
   final Widget? child;
   final Color backgroundColor;
 
+  /// 🔹 Border properties
+  final bool showBorder;
+  final Color borderColor;
+  final double borderWidth;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width,
       height: height,
       margin: margin,
-      padding: EdgeInsets.all(0),
+      padding: padding,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(radius),
         color: backgroundColor,
+        borderRadius: BorderRadius.circular(radius),
+        border: showBorder
+            ? Border.all(
+                color: borderColor,
+                width: borderWidth,
+              )
+            : null,
       ),
       child: child,
     );
