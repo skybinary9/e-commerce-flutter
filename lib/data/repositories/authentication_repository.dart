@@ -1,3 +1,4 @@
+import 'package:ecommerce_final_year_project/data/repositories/user_repository.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/login/login.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:ecommerce_final_year_project/features/authentication/screens/signup/verify_email.dart';
@@ -17,9 +18,13 @@ import 'package:google_sign_in/google_sign_in.dart';
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
 
+  ///Veriables
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final deviceStorage = GetStorage();
 
+  ///Get the authication user data
+  User? get authUser => _auth.currentUser;
+  /// Collected from main.dart on app launch
   @override
   void onReady() {
     FlutterNativeSplash.remove();
@@ -215,4 +220,42 @@ Future<UserCredential?> signInWithGoogle() async {
       throw 'Something went wrong. Please try again.';
     }
   }
+
+  /*------------------ Delete User Account ------------------*/
+Future<void> deleteAccount() async {
+  try {
+    final user = _auth.currentUser;
+    if (user == null) throw 'No logged-in user found';
+
+    await UserRepository.instance.removeUserRecode(_auth.currentUser!.uid);
+    await _auth.currentUser?.delete();
+  } on FirebaseAuthException catch (e) {
+    throw FirebaseAuthExceptionHandler(e.code).message;
+  } catch (_) {
+    throw 'Account deletion failed. Please re-authenticate.';
+  }
+}
+/*------------------ Re-Authenticate Email & Password ------------------*/
+Future<void> reAuthicationWithEamilAndPassword(
+  String email,
+  String password,
+) async {
+  try {
+    final user = _auth.currentUser;
+    if (user == null) throw 'No logged-in user found';
+
+    final credential = EmailAuthProvider.credential(
+      email: email,
+      password: password,
+    );
+
+    await user.reauthenticateWithCredential(credential);
+  } on FirebaseAuthException catch (e) {
+    throw FirebaseAuthExceptionHandler(e.code).message;
+  } catch (_) {
+    throw 'Re-authentication failed';
+  }
+}
+
+
 }

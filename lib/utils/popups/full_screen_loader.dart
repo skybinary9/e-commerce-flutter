@@ -8,32 +8,29 @@ class EAppScreenLoader {
 
   /// Opens a full-screen loading dialog
   static void openLoadingDialog(String text, String animation) {
-    final context = Get.overlayContext;
-    if (context == null) return;
+  final context = Get.overlayContext;
+  if (context == null) return;
 
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (_) => PopScope(
-        canPop: false,
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          color: HelperFunction.isDarkMode(context)
-              ? MegamartColors.dark
-              : MegamartColors.white,
-            
-            
-          child: Column(
-           children: [
-            const SizedBox(height: 250),
-            EAppLoaderWidget(text: text, animation: '', /*animation: '',*/),
-           ],
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    
+    builder: (_) => PopScope(
+      canPop: false,
+      child: Scaffold(
+        backgroundColor: HelperFunction.isDarkMode(context)
+            ? MegamartColors.dark
+            : MegamartColors.white,
+        body: Center(
+          child: EAppLoaderWidget(
+            text: text,
+            animation: animation,
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   /// Closes the loading dialog safely
   static void stopLoading() {

@@ -1,4 +1,5 @@
 import 'package:ecommerce_final_year_project/common/widgets/images/e_circurcular_images.dart';
+import 'package:ecommerce_final_year_project/features/personaliztion/controllers/user_controlller.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class UserProfileTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final contoller = UserControlller.instance;
     return ListTile(
       leading: ECircularImage(
         image: MegamartImages.userimage,
@@ -22,14 +24,14 @@ class UserProfileTile extends StatelessWidget {
         padding: 0,
       ),
       title: Text(
-        "Muhammad Shoaib",
-        style: Theme.of(context)
+        contoller.user.value.fullName
+        ,style: Theme.of(context)
             .textTheme
             .headlineSmall!
             .apply(color: MegamartColors.white),
       ),
       subtitle: Text(
-        "skybinary9@gmail.com",
+        contoller.user.value.email,
         style: Theme.of(context)
             .textTheme
             .bodySmall!

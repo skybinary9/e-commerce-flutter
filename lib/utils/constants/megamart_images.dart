@@ -15,7 +15,7 @@ class MegamartImages {
   static const String userimage1 = "assets/images/user/userimage1.jpeg";
 
   /// ---- animation lottie
-  /// 
+  static const String docer = "assets/animation/docer.json";
   /// ------ promo banner
   static const String promo  = "assets/images/banners/arrangement-black-friday-shopping-carts-with-copy-space.jpg";
   static const String promo2  = "assets/images/banners/cyber-monday-retail-sales.jpg";

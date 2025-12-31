@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
 
                   /// App Bar
-                  const HomeAppBar(),
+                  HomeAppBar(),
 
                   const SizedBox(
                     height: MegamartSize.spaceBetweenItems,
@@ -85,7 +85,8 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   /// Popular Products
-                  EGridView(itemCount: 4, mainAxisExtent: 305, itemBuilder: (_, index)=> const ProductCartVertical(),),
+                  EGridView(itemCount: 4, mainAxisExtent: 305, 
+                  itemBuilder: (_, index)=> const ProductCartVertical(),),
                 ],
               ),
             ),

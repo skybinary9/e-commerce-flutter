@@ -1,5 +1,3 @@
-
-
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -7,19 +5,19 @@ import 'package:iconsax/iconsax.dart';
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
     super.key,
-    required this.OnPressed, 
+    required this.onPressed, 
     required this.title, 
     required this.vlaue, 
-    this.icon =Iconsax.arrow_right,
+    this.icon = Iconsax.arrow_right,
   });
-  final VoidCallback OnPressed;
-  final String title , vlaue;
+  final VoidCallback onPressed;
+  final String title ,vlaue;
   final IconData icon;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: OnPressed,
+      onTap: onPressed,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: MegamartSize.spaceBetweenItems/1.5),
         child: Row(
@@ -30,8 +28,8 @@ class ProfileMenu extends StatelessWidget {
               overflow: TextOverflow.ellipsis,),
             ),
             Expanded(
-              flex: 5,
-              child: Text(title, style: Theme.of(context).textTheme.bodyMedium, 
+              flex: 6,
+              child: Text(vlaue, style: Theme.of(context).textTheme.bodyMedium, 
               overflow: TextOverflow.ellipsis,),
             ),
             Expanded(child: Icon(icon, size: 18,))

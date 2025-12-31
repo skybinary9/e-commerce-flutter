@@ -9,6 +9,7 @@ class UserModel {
   String phoneNumber;
   String profilePicture;
   String username;
+  
 
   UserModel({
     required this.id,
@@ -57,6 +58,7 @@ class UserModel {
   /// Create UserModel from Firestore snapshot
   factory UserModel.fromSnapshot(
       DocumentSnapshot<Map<String, dynamic>> document) {
+        if (document.data() != null){
     final data = document.data();
 
     return UserModel(
@@ -68,5 +70,23 @@ class UserModel {
       phoneNumber: data?['phoneNumber'] ?? '',
       profilePicture: data?['profilePicture'] ?? '',
     );
+    }
+    else{
+      return UserModel.empty();
+    }
   }
+
+  static UserModel empty() => UserModel(
+      id: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phoneNumber: '',
+      profilePicture: '',
+      username: '',
+  );
+    
+  
 }
+
+

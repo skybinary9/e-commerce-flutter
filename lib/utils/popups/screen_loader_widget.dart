@@ -1,17 +1,15 @@
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
-//import 'package:lottie/lottie.dart';
-//import 'package:lottie/lottie.dart';
-
+import 'package:lottie/lottie.dart';
 class EAppLoaderWidget extends StatelessWidget {
   const EAppLoaderWidget({
     super.key,
     required this.text,
-    //this.animation,
+    required this.animation,
     this.showAction = false,
     this.actionText,
-    this.onActionPressed, required this.animation,
+    this.onActionPressed,
   });
 
   final String text;
@@ -24,12 +22,15 @@ class EAppLoaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min, // ⭐ VERY IMPORTANT
         children: [
-          /*Lottie.asset(
-            animation,
-            width: MediaQuery.of(context).size.width * 0.8,
-          ),*/
+          SizedBox(
+            height: 200, // ✅ FIXED SAFE HEIGHT
+            child: Lottie.asset(
+              animation,
+              fit: BoxFit.contain,
+            ),
+          ),
 
           const SizedBox(height: MegamartSize.defaultSpace),
 
@@ -39,9 +40,8 @@ class EAppLoaderWidget extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
 
-          const SizedBox(height: MegamartSize.defaultSpace),
-
-          if (showAction && actionText != null)
+          if (showAction && actionText != null) ...[
+            const SizedBox(height: MegamartSize.defaultSpace),
             SizedBox(
               width: 250,
               child: ElevatedButton(
@@ -58,6 +58,7 @@ class EAppLoaderWidget extends StatelessWidget {
                 ),
               ),
             ),
+          ],
         ],
       ),
     );
