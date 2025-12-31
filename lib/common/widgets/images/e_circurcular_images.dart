@@ -5,23 +5,23 @@ import 'package:flutter/material.dart';
 
 class ECircularImage extends StatelessWidget {
   const ECircularImage({
-    super.key, 
-    this.fit = BoxFit.cover, 
-    required this.image, 
-    this.isNetworkImag = false, 
-    this.overlayColor, 
+    super.key,
+    this.fit = BoxFit.cover,
+    required this.image,
+    this.isNetworkImag = false,
+    this.overlayColor,
     this.backgroundColor,
-    this.width = 56, 
-    this.height = 56, 
+    this.width = 56,
+    this.height = 56,
     this.padding = MegamartSize.sm,
   });
+
   final BoxFit? fit;
   final String image;
   final bool isNetworkImag;
   final Color? overlayColor;
   final Color? backgroundColor;
   final double width, height, padding;
-
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +30,25 @@ class ECircularImage extends StatelessWidget {
       width: width,
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-        color: backgroundColor?? (HelperFunction.isDarkMode(context) ? MegamartColors.black : MegamartColors.white),
-        borderRadius: BorderRadius.circular(100),
+        shape: BoxShape.circle, // ✅ container round
+        color: backgroundColor ??
+            (HelperFunction.isDarkMode(context)
+                ? MegamartColors.black
+                : MegamartColors.white),
       ),
-      child: Image(
-        fit: fit,
-        image: isNetworkImag ? NetworkImage(image) :AssetImage(image) as ImageProvider,
-        color: overlayColor,
+      child: ClipOval(
+        child: SizedBox(
+          height: height,
+          width: width,
+          child: Image(
+            fit: fit, // cover fills circle properly
+            image: isNetworkImag
+                ? NetworkImage(image)
+                : AssetImage(image) as ImageProvider,
+            color: overlayColor,
+          ),
         ),
-      );
+      ),
+    );
   }
 }
