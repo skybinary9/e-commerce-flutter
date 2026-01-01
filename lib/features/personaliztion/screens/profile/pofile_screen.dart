@@ -6,9 +6,11 @@ import 'package:ecommerce_final_year_project/features/personaliztion/screens/pro
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/update_email.dart';
 import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
+import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:flutter/services.dart';
 
 import '../../../../common/widgets/text/headertext.dart';
 
@@ -47,7 +49,7 @@ class PofileScreen extends StatelessWidget {
               const SizedBox(height: MegamartSize.spaceBetweenItems),
               const SectionHeading(title: 'Personal Information', showactionButton: false,),
               const SizedBox(height: MegamartSize.spaceBetweenItems,),
-              ProfileMenu(onPressed: () {  }, title: 'UserId',vlaue: contoller.user.value.id, icon: Iconsax.copy,),
+              ProfileMenu(onPressed: () {HelperFunction.copyUserId(contoller.user.value.id);}, title: 'UserId',vlaue: contoller.user.value.id, icon: Iconsax.copy,),
               ProfileMenu(onPressed: ()=> Get.to(()=> UpdateEmailScreen()), title: 'Email',vlaue: contoller.user.value.email,),
               ProfileMenu(onPressed: () {  }, title: 'Ph.No',vlaue: contoller.user.value.phoneNumber,),
               ProfileMenu(onPressed: () {  }, title: 'Gender',vlaue: 'Male',),

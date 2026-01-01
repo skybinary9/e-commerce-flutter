@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class HelperFunction {
@@ -112,6 +113,22 @@ class HelperFunction {
   static List<T> removeDuplicates<T>(List<T> list) {
     return list.toSet().toList();
   }
+/// Copy userId
+  // ✅ Copy userId (STATIC utility method)
+static void copyUserId(String userId) {
+  Clipboard.setData(ClipboardData(text: userId));
+
+  HapticFeedback.lightImpact();
+
+  Get.snackbar(
+    'Copied',
+    'User ID copied to clipboard',
+    snackPosition: SnackPosition.BOTTOM,
+    duration: const Duration(seconds: 2),
+    margin: const EdgeInsets.all(12),
+  );
+}
+
 
   // ✅ Wrap widgets in rows (grid-like layout)
   static List<Widget> wrapWidgets(List<Widget> widgets, int rowSize) {
