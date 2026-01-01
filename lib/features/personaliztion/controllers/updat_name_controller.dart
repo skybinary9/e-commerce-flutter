@@ -13,6 +13,7 @@ class UpdatNameController extends GetxController {
 
   final firstName = TextEditingController();
   final lastName = TextEditingController();
+  final email = TextEditingController();
 
   final userController = UserControlller.instance;
   final userRepository = Get.put(UserRepository());
