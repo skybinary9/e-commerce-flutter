@@ -2,6 +2,7 @@ import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_final_year_project/common/widgets/images/e_circurcular_images.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/controllers/user_controlller.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/change_name.dart';
+import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/change_username.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/profilemenu.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/update_email.dart';
 import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
@@ -10,7 +11,6 @@ import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart'
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:flutter/services.dart';
 
 import '../../../../common/widgets/text/headertext.dart';
 
@@ -43,7 +43,7 @@ class PofileScreen extends StatelessWidget {
               const SectionHeading(title: 'Profile Information', showactionButton: false,),
               const SizedBox(height: MegamartSize.spaceBetweenItems),
               ProfileMenu(onPressed: ()=> Get.to(()=> const ChangeName()), title: 'Name', vlaue: contoller.user.value.fullName,),
-              ProfileMenu(onPressed: () {  }, title: 'UserName', vlaue: contoller.user.value.username,),
+              ProfileMenu(onPressed: ()=> Get.to(()=> const ChangeUsernameScreen()), title: 'UserName', vlaue: contoller.user.value.username,),
               const SizedBox(height: MegamartSize.spaceBetweenItems,),
               const Divider(),
               const SizedBox(height: MegamartSize.spaceBetweenItems),
