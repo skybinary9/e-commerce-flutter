@@ -256,6 +256,7 @@ Future<void> reAuthicationWithEamilAndPassword(
     throw 'Re-authentication failed';
   }
 }
+///upload profile image
 
 
 }

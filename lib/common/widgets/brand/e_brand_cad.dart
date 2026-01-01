@@ -30,7 +30,6 @@ class EBrandCard extends StatelessWidget {
         children: [
         Flexible(
           child: ECircularImage(
-            isNetworkImag: false,
             backgroundColor: Colors.transparent,
             image: MegamartImages.clothicon,
             overlayColor: HelperFunction.isDarkMode(context) ? MegamartColors.white : MegamartColors.black,

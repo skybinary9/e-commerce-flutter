@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ReAuthnication extends StatelessWidget {
-  const ReAuthnication({Key? key}) : super(key: key);
+  const ReAuthnication({super.key});
 
   @override
   Widget build(BuildContext context) {

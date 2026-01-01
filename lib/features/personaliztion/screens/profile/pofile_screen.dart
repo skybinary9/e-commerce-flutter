@@ -1,5 +1,6 @@
 import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_final_year_project/common/widgets/images/e_circurcular_images.dart';
+import 'package:ecommerce_final_year_project/data/repositories/user_repository.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/controllers/user_controlller.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/change_name.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/change_username.dart';
@@ -8,10 +9,10 @@ import 'package:ecommerce_final_year_project/features/personaliztion/screens/pro
 import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
+import 'package:ecommerce_final_year_project/utils/popups/loaders.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../../common/widgets/text/headertext.dart';
 
 class PofileScreen extends StatelessWidget {
@@ -19,53 +20,160 @@ class PofileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final contoller = UserControlller.instance;
+    final controller = UserControlller.instance;
+    bool _isPicking = false;
+
     return Scaffold(
-      appBar: EAppbar(
-        showbackArrow: true, title: Text("Profile"),
+      appBar: const EAppbar(
+        showbackArrow: true,
+        title: Text("Profile"),
       ),
       body: SingleChildScrollView(
-        child: Padding(padding: EdgeInsets.all(MegamartSize.defaultSpace),
+        child: Padding(
+          padding: const EdgeInsets.all(MegamartSize.defaultSpace),
           child: Column(
             children: [
+
+              /// ================= PROFILE IMAGE =================
               SizedBox(
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const ECircularImage(image: MegamartImages.userimage, width: 80, height: 80,),
-                    TextButton(onPressed: (){}, child: const Text("Change Profile Picture"),),
+                    Obx(() {
+                      final image = controller.user.value.profilePicture;
+
+                      return ECircularImage(
+                        image: image.isNotEmpty ? image : MegamartImages.userimage,
+                        width: 80,
+                        height: 80,
+                        isNetworkImage: image.isNotEmpty,
+                        backgroundColor: Colors.grey.shade300,
+                        overlayColor: Colors.white,
+                      );
+                    }),
+
+                    const SizedBox(height: 8),
+
+                    TextButton(
+                      onPressed: () async {
+                        if (_isPicking) return; // prevent double tap
+                        _isPicking = true;
+
+                        final url = await UserRepository.instance.pickUploadAndSaveProfileImage();
+
+                        if (url != null) {
+                          // Update local Rx user object
+                          controller.user.update((val) {
+                            val?.profilePicture = url;
+                          });
+
+                          ELoader.successSnackBar(
+                            title: 'Success',
+                            message: 'Profile picture updated',
+                          );
+                        } else {
+                          ELoader.errorSnackBar(
+                            title: 'Error',
+                            message: 'Failed to update profile picture',
+                          );
+                        }
+
+                        _isPicking = false;
+                      },
+                      child: const Text("Change Profile Picture"),
+                    ),
                   ],
                 ),
               ),
-              const SizedBox(height: MegamartSize.spaceBetweenItems/2,),
+
+              const SizedBox(height: MegamartSize.spaceBetweenItems / 2),
               const Divider(),
               const SizedBox(height: MegamartSize.spaceBetweenItems),
-              const SectionHeading(title: 'Profile Information', showactionButton: false,),
+
+              /// ================= PROFILE INFO =================
+              const SectionHeading(
+                title: 'Profile Information',
+                showactionButton: false,
+              ),
               const SizedBox(height: MegamartSize.spaceBetweenItems),
-              ProfileMenu(onPressed: ()=> Get.to(()=> const ChangeName()), title: 'Name', vlaue: contoller.user.value.fullName,),
-              ProfileMenu(onPressed: ()=> Get.to(()=> const ChangeUsernameScreen()), title: 'UserName', vlaue: contoller.user.value.username,),
-              const SizedBox(height: MegamartSize.spaceBetweenItems,),
+
+              Obx(() => ProfileMenu(
+                    onPressed: () => Get.to(() => const ChangeName()),
+                    title: 'Name',
+                    vlaue: controller.user.value.fullName,
+                  )),
+
+              Obx(() => ProfileMenu(
+                    onPressed: () => Get.to(() => const ChangeUsernameScreen()),
+                    title: 'UserName',
+                    vlaue: controller.user.value.username,
+                  )),
+
+              const SizedBox(height: MegamartSize.spaceBetweenItems),
               const Divider(),
               const SizedBox(height: MegamartSize.spaceBetweenItems),
-              const SectionHeading(title: 'Personal Information', showactionButton: false,),
-              const SizedBox(height: MegamartSize.spaceBetweenItems,),
-              ProfileMenu(onPressed: () {HelperFunction.copyUserId(contoller.user.value.id);}, title: 'UserId',vlaue: contoller.user.value.id, icon: Iconsax.copy,),
-              ProfileMenu(onPressed: ()=> Get.to(()=> UpdateEmailScreen()), title: 'Email',vlaue: contoller.user.value.email,),
-              ProfileMenu(onPressed: () {  }, title: 'Ph.No',vlaue: contoller.user.value.phoneNumber,),
-              ProfileMenu(onPressed: () {  }, title: 'Gender',vlaue: 'Male',),
-              ProfileMenu(onPressed: () {  }, title: 'DOB',vlaue: '10, Aug, 2002',),
+
+              /// ================= PERSONAL INFO =================
+              const SectionHeading(
+                title: 'Personal Information',
+                showactionButton: false,
+              ),
+              const SizedBox(height: MegamartSize.spaceBetweenItems),
+
+              Obx(() => ProfileMenu(
+                    onPressed: () {
+                      HelperFunction.copyUserId(controller.user.value.id);
+                    },
+                    title: 'UserId',
+                    vlaue: controller.user.value.id,
+                    icon: Iconsax.copy,
+                  )),
+
+              Obx(() => ProfileMenu(
+                    onPressed: () => Get.to(() => UpdateEmailScreen()),
+                    title: 'Email',
+                    vlaue: controller.user.value.email,
+                  )),
+
+              Obx(() => ProfileMenu(
+                    onPressed: () {},
+                    title: 'Ph.No',
+                    vlaue: controller.user.value.phoneNumber,
+                  )),
+
+              Obx(() => ProfileMenu(
+                    onPressed: () {},
+                    title: 'Gender',
+                    vlaue: controller.user.value.gender.isNotEmpty
+                        ? controller.user.value.gender
+                        : 'Not set',
+                  )),
+
+              Obx(() => ProfileMenu(
+                    onPressed: () {},
+                    title: 'DOB',
+                    vlaue: controller.user.value.dateOfBirth.isNotEmpty
+                        ? controller.user.value.dateOfBirth
+                        : 'Not set',
+                  )),
+
               const Divider(),
               const SizedBox(height: MegamartSize.spaceBetweenItems),
-              Center(child: TextButton(
-                onPressed: ()=> contoller.deleteAccountWarningPopup(), child: const Text("Close Account", style: TextStyle(color: Colors.red),),),)
 
-
-
-
+              /// ================= DELETE ACCOUNT =================
+              Center(
+                child: TextButton(
+                  onPressed: () => controller.deleteAccountWarningPopup(),
+                  child: const Text(
+                    "Close Account",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
-        ),
+      ),
     );
   }
 }
