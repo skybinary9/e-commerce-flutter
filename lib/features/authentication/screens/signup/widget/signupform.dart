@@ -60,8 +60,7 @@ class SignupForm extends StatelessWidget {
           TextFormField(
             controller: controller.username,
             validator: (value) =>
-                MegartValidator.validateEmptyText(
-                    MegamartText.username, value),
+                MegartValidator.validateUsername(value),
             decoration: const InputDecoration(
               labelText: MegamartText.username,
               prefixIcon: Icon(Iconsax.user_edit),
@@ -95,6 +94,56 @@ class SignupForm extends StatelessWidget {
 
           const SizedBox(height: MegamartSize.spaceBetweenInputFields),
 
+          // Date of Birth
+          TextFormField(
+            controller: controller.dateOfBirth,
+            readOnly: true,
+            validator: (value) =>
+                MegartValidator.validateDateOfBirth(value),
+            decoration: const InputDecoration(
+              labelText: 'Date of Birth',
+              prefixIcon: Icon(Iconsax.calendar),
+            ),
+            onTap: () async {
+              DateTime? pickedDate = await showDatePicker(
+                context: context,
+                initialDate: DateTime(2000),
+                firstDate: DateTime(1950),
+                lastDate: DateTime.now(),
+              );
+
+              if (pickedDate != null) {
+                controller.dateOfBirth.text =
+                    "${pickedDate.day}/${pickedDate.month}/${pickedDate.year}";
+              }
+            },
+          ),
+
+          const SizedBox(height: MegamartSize.spaceBetweenInputFields),
+
+          // Gender
+          Obx(() => DropdownButtonFormField<String>(
+                value: controller.gender.value.isEmpty
+                    ? null
+                    : controller.gender.value,
+                validator: (value) =>
+                    MegartValidator.validateDropdown(value, 'Gender'),
+                decoration: const InputDecoration(
+                  labelText: 'Gender',
+                  prefixIcon: Icon(Iconsax.user),
+                ),
+                items: const [
+                  DropdownMenuItem(value: 'Male', child: Text('Male')),
+                  DropdownMenuItem(value: 'Female', child: Text('Female')),
+                  DropdownMenuItem(value: 'Other', child: Text('Other')),
+                ],
+                onChanged: (value) {
+                  controller.gender.value = value!;
+                },
+              )),
+
+          const SizedBox(height: MegamartSize.spaceBetweenInputFields),
+
           // Password + Confirm Password
           Row(
             children: [
@@ -106,11 +155,9 @@ class SignupForm extends StatelessWidget {
                       obscureText: controller.hidePassword.value,
                       decoration: InputDecoration(
                         labelText: MegamartText.password,
-                        prefixIcon:
-                            const Icon(Iconsax.password_check),
+                        prefixIcon: const Icon(Iconsax.password_check),
                         suffixIcon: IconButton(
-                          onPressed: () =>
-                              controller.hidePassword.toggle(),
+                          onPressed: () => controller.hidePassword.toggle(),
                           icon: Icon(
                             controller.hidePassword.value
                                 ? Iconsax.eye_slash
@@ -126,16 +173,13 @@ class SignupForm extends StatelessWidget {
                       controller: controller.confirmPassword,
                       validator: (value) =>
                           MegartValidator.validateConfirmPassword(
-                              value, controller.password.text),
+                              controller.password.text, value),
                       obscureText: controller.hidePassword.value,
                       decoration: InputDecoration(
-                        labelText:
-                            MegamartText.confirmPassword,
-                        prefixIcon:
-                            const Icon(Iconsax.password_check),
+                        labelText: MegamartText.confirmPassword,
+                        prefixIcon: const Icon(Iconsax.password_check),
                         suffixIcon: IconButton(
-                          onPressed: () =>
-                              controller.hidePassword.toggle(),
+                          onPressed: () => controller.hidePassword.toggle(),
                           icon: Icon(
                             controller.hidePassword.value
                                 ? Iconsax.eye_slash

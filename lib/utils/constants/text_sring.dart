@@ -98,4 +98,6 @@ class MegamartText {
   static const String enterEmailForReset =
       'Enter your email address below to receive a password reset link.';
   static const String sendResetLink = 'Send Reset Link';
+
+   static const String changeEmail = 'Note: After changing the email, please verify it using the new email, and then log in again with the new email.';
 }

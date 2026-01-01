@@ -9,7 +9,10 @@ class UserModel {
   String phoneNumber;
   String profilePicture;
   String username;
-  
+
+  // ✅ NEW FIELDS
+  String dateOfBirth;
+  String gender;
 
   UserModel({
     required this.id,
@@ -19,6 +22,8 @@ class UserModel {
     required this.phoneNumber,
     required this.profilePicture,
     required this.username,
+    required this.dateOfBirth,
+    required this.gender,
   });
 
   /// Full name
@@ -52,41 +57,47 @@ class UserModel {
       'email': email,
       'phoneNumber': phoneNumber,
       'profilePicture': profilePicture,
+
+      // ✅ NEW
+      'dateOfBirth': dateOfBirth,
+      'gender': gender,
     };
   }
 
   /// Create UserModel from Firestore snapshot
   factory UserModel.fromSnapshot(
       DocumentSnapshot<Map<String, dynamic>> document) {
-        if (document.data() != null){
-    final data = document.data();
+    if (document.data() != null) {
+      final data = document.data()!;
 
-    return UserModel(
-      id: document.id,
-      firstName: data?['firstName'] ?? '',
-      lastName: data?['lastName'] ?? '',
-      email: data?['email'] ?? '',
-      username: data?['username'] ?? '',
-      phoneNumber: data?['phoneNumber'] ?? '',
-      profilePicture: data?['profilePicture'] ?? '',
-    );
-    }
-    else{
+      return UserModel(
+        id: document.id,
+        firstName: data['firstName'] ?? '',
+        lastName: data['lastName'] ?? '',
+        email: data['email'] ?? '',
+        username: data['username'] ?? '',
+        phoneNumber: data['phoneNumber'] ?? '',
+        profilePicture: data['profilePicture'] ?? '',
+
+        // ✅ SAFE DEFAULTS
+        dateOfBirth: data['dateOfBirth'] ?? '',
+        gender: data['gender'] ?? '',
+      );
+    } else {
       return UserModel.empty();
     }
   }
 
+  /// Empty user model
   static UserModel empty() => UserModel(
-      id: '',
-      firstName: '',
-      lastName: '',
-      email: '',
-      phoneNumber: '',
-      profilePicture: '',
-      username: '',
-  );
-    
-  
+        id: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        phoneNumber: '',
+        profilePicture: '',
+        username: '',
+        dateOfBirth: '',
+        gender: '',
+      );
 }
-
-

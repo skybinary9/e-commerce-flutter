@@ -1,6 +1,7 @@
 import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/controllers/updat_email_controller.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
+import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';
 import 'package:ecommerce_final_year_project/utils/validators/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -63,6 +64,8 @@ class UpdateEmailScreen extends StatelessWidget {
                       prefixIcon: Icon(Iconsax.lock),
                     ),
                   ),
+                  const SizedBox(height: MegamartSize.spaceBetweenItems),
+                  Align(alignment: AlignmentGeometry.topLeft, child: Text(MegamartText.changeEmail, style: Theme.of(context).textTheme.labelLarge,))
                 ],
               ),
             ),

@@ -62,7 +62,9 @@ class UserControlller extends GetxController {
         email: userCredential.user?.email ?? '',
         username: username,
         phoneNumber: userCredential.user?.phoneNumber ?? '',
-        profilePicture: userCredential.user?.photoURL ?? '',
+        profilePicture: userCredential.user?.photoURL ?? '', 
+        dateOfBirth: '', 
+        gender: '',
       );
 
       await userRepository.saveUserRecord(newUser);

@@ -1,7 +1,6 @@
 import 'package:ecommerce_final_year_project/data/repositories/authentication_repository.dart';
 import 'package:ecommerce_final_year_project/data/repositories/user_repository.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/controllers/user_controlller.dart';
-import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/pofile_screen.dart';
 import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/network_manager.dart';
 import 'package:ecommerce_final_year_project/utils/popups/full_screen_loader.dart';
