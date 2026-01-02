@@ -28,7 +28,7 @@ class Rating extends StatelessWidget {
           ],
           ),
           IconButton(onPressed: (){}, 
-       icon: const Icon(Iconsax.share, size: MegamartSize.iconMd,))
+       icon: const Icon(Icons.share, size: MegamartSize.iconMd,))
       ],
     );
   }

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_final_year_project/common/widgets/icon/e_icon.dart';
 import 'package:ecommerce_final_year_project/common/widgets/images/e_rounded_images.dart';

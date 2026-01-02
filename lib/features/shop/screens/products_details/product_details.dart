@@ -1,22 +1,24 @@
-import 'package:ecommerce_final_year_project/common/widgets/images/e_rounded_images.dart';
-import 'package:ecommerce_final_year_project/features/shop/screens/home/widget/curved_adge_widget.dart';
+import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/products_details/widget/Product_Attirbutes.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/products_details/widget/bottom_add_to_cart.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/products_details/widget/image_product_slide.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/products_details/widget/product_meta.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/products_details/widget/rating_share.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
-import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:read_more_text/read_more_text.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final dark = HelperFunction.isDarkMode(context);
     return Scaffold(
+      bottomNavigationBar: BottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -28,15 +30,39 @@ class ProductDetails extends StatelessWidget {
               child: Column(
                 children: [
                   /// Rating & Store
-                  const Rating(),
+                  Rating(),
                      
                   /// Price, Title, stock And brand
                   ProductMetaData(),
                   /// Atrributes
+                  ProductAttirbutes(),
+                  const SizedBox(height: MegamartSize.spaceBetweenSections),
                   /// Checkout Button
+                  SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, 
+                  child: Text("Checkout"))),
+                  const SizedBox(height: MegamartSize.spaceBetweenSections),               
                   /// Description
+                  SectionHeading(title: 'Description', showactionButton: false,),
+                  const SizedBox(height: MegamartSize.spaceBetweenItems),
+                  ReadMoreText('This product offers reliable performance, ease of use, and a clean, modern design for everyday needs. his product offers reliable performance, ease of use, and a clean, modern design for everyday needs. his product offers reliable performance, ease of use, and a clean, modern design for everyday needs. his product offers reliable performance, ease of use, and a clean, modern design for everyday needs', 
+                  numLines: 2,
+                   readMoreText: 'Show more', readLessText: 'Less',
+                   readMoreTextStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800 ),
+                   readMoreIconColor: MegamartColors.primary,
+                  ),
                   /// Review
-                
+                  Divider(),
+                  const SizedBox(height: MegamartSize.spaceBetweenItems),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const SectionHeading(title: 'Review(199)', showactionButton: false,),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.arrow_circle_right))
+                    ],
+                  ),
+                  const SizedBox(height: MegamartSize.spaceBetweenSections),
+
+
                 ],
               ),
             )

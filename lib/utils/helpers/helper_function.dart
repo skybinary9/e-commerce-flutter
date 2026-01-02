@@ -8,6 +8,8 @@ class HelperFunction {
     switch (value.toLowerCase()) {
       case 'green':
         return Colors.green;
+      case 'yellow':
+        return Colors.yellow;
       case 'red':
         return Colors.red;
       case 'blue':

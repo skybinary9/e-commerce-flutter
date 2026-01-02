@@ -10,7 +10,7 @@ class EcircularIcon extends StatelessWidget {
     this.width, 
     this.size = MegamartSize.lg, 
     required this.icon, 
-    this.background, 
+    this.backgroundColor, 
     this.onPressed, 
     this.color,
   });
@@ -18,7 +18,7 @@ class EcircularIcon extends StatelessWidget {
   
   final double ? height, width , size;
   final IconData icon;
-  final Color ? background;
+  final Color ? backgroundColor;
   final VoidCallback? onPressed;
   final Color ? color ;
 
@@ -29,8 +29,8 @@ class EcircularIcon extends StatelessWidget {
       width: width,
        decoration: BoxDecoration(
          
-         color: background != null 
-         ? background!
+         color: backgroundColor != null 
+         ? backgroundColor!
          : HelperFunction.isDarkMode(context)
          ? MegamartColors.black.withOpacity(0.9)
          : MegamartColors.white.withOpacity(0.9),
