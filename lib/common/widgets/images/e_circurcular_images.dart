@@ -1,5 +1,6 @@
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
+//import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 
@@ -53,24 +54,25 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 
 class ECircularImage extends StatelessWidget {
-  final String image;
-  final double width;
-  final double height;
-  final double padding;
-  final BoxFit fit;
-  final bool isNetworkImage;
-  final Color? backgroundColor;
-
   const ECircularImage({
     super.key,
     required this.image,
     this.width = 50,
     this.height = 50,
-    this.padding = 2,
+    this.padding = MegamartSize.sm,
     this.fit = BoxFit.cover,
     this.isNetworkImage = false,
-    this.backgroundColor, required Color overlayColor,
+    this.backgroundColor,
+    this.overlayColor,
   });
+  final String image;
+  final double width;
+  final double height;
+  final double padding;
+  final Color? overlayColor;
+  final BoxFit fit;
+  final bool isNetworkImage;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -80,13 +82,17 @@ class ECircularImage extends StatelessWidget {
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: backgroundColor ?? MegamartColors.white,
+        color: backgroundColor ??
+            (HelperFunction.isDarkMode(context)
+                ? MegamartColors.black
+                : MegamartColors.white),
       ),
       child: ClipOval(
         child: isNetworkImage && image.isNotEmpty
             ? Image.network(
                 image,
                 fit: fit,
+                // ignore: unnecessary_underscores
                 errorBuilder: (_, __, ___) => Image.asset(
                   MegamartImages.userimage,
                   fit: fit,
@@ -95,6 +101,7 @@ class ECircularImage extends StatelessWidget {
             : Image.asset(
                 image.isNotEmpty ? image : MegamartImages.userimage,
                 fit: fit,
+                color: overlayColor,
               ),
       ),
     );

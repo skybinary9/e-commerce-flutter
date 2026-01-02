@@ -1,4 +1,5 @@
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
+import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
 
 class AppCircularContainer extends StatelessWidget {
@@ -7,7 +8,7 @@ class AppCircularContainer extends StatelessWidget {
     this.width,
     this.height,
     this.padding,
-    this.radius =16,
+    this.radius = MegamartSize.cardRadiusLg,
     this.child,
     this.backgroundColor = MegamartColors.white,
     this.margin,

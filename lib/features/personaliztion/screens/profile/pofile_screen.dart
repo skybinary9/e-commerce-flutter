@@ -21,7 +21,7 @@ class PofileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = UserControlller.instance;
-    bool _isPicking = false;
+    bool isPicking = false;
 
     return Scaffold(
       appBar: const EAppbar(
@@ -56,8 +56,8 @@ class PofileScreen extends StatelessWidget {
 
                     TextButton(
                       onPressed: () async {
-                        if (_isPicking) return; // prevent double tap
-                        _isPicking = true;
+                        if (isPicking) return; // prevent double tap
+                        isPicking = true;
 
                         final url = await UserRepository.instance.pickUploadAndSaveProfileImage();
 
@@ -78,7 +78,7 @@ class PofileScreen extends StatelessWidget {
                           );
                         }
 
-                        _isPicking = false;
+                        isPicking = false;
                       },
                       child: const Text("Change Profile Picture"),
                     ),

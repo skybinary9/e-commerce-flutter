@@ -21,6 +21,7 @@ class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
 
   final FirebaseFirestore _db = FirebaseFirestore.instance;
+  // ignore: unused_field
   final Logger _logger = Logger();
 
 
@@ -166,6 +167,7 @@ class UserRepository extends GetxController {
 
       return imageUrl;
     } catch (e) {
+      // ignore: avoid_print
       print("Error uploading profile image: $e");
       return null;
     }

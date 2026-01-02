@@ -6,11 +6,13 @@ import 'package:ecommerce_final_year_project/common/widgets/text/brand_title_tex
 import 'package:ecommerce_final_year_project/common/widgets/text/e_text_verify_icon.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/price_text.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/product_title.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/products_details/product_details.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProductCartVertical extends StatelessWidget {
@@ -21,7 +23,7 @@ class ProductCartVertical extends StatelessWidget {
     final dark = HelperFunction.isDarkMode(context);
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(()=> const ProductDetails()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
