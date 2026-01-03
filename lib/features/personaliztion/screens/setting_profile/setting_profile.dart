@@ -4,6 +4,7 @@ import 'package:ecommerce_final_year_project/common/widgets/listtile/t_setting_m
 import 'package:ecommerce_final_year_project/common/widgets/listtile/user_pofile_tile.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';
 import 'package:ecommerce_final_year_project/data/repositories/authentication_repository.dart';
+import 'package:ecommerce_final_year_project/features/personaliztion/screens/address/address.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/pofile_screen.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
@@ -58,10 +59,12 @@ class SettingProfile extends StatelessWidget {
 
                   const SizedBox(height: MegamartSize.spaceBetweenItems),
 
-                  const TSettingMenuTitle(
+                  TSettingMenuTitle(
+                    icon: Iconsax.safe_home,
                     title: 'My Account',
                     subtitle: 'Set shopping delivery address',
-                    icon: Iconsax.safe_home,
+                    onTap: ()=> Get.to(()=> const UserAddressScreen() ),
+                    
                   ),
 
                   const TSettingMenuTitle(
