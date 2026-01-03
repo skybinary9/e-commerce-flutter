@@ -1,5 +1,4 @@
 import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/app_circular_container.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/address/addressNewScreen.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/address/widget/single_address.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';

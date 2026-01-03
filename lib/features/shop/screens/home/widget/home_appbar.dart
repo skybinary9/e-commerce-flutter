@@ -1,5 +1,5 @@
 import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_final_year_project/common/widgets/product/cart/menu_product_cart.dart';
+import 'package:ecommerce_final_year_project/common/widgets/cart/menu_product_cart.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/controllers/user_controlller.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/text_sring.dart';

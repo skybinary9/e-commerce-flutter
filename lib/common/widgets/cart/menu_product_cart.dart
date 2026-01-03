@@ -1,6 +1,8 @@
 
+import 'package:ecommerce_final_year_project/features/shop/screens/cart/cart.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CartCounterIcon extends StatelessWidget {
   const CartCounterIcon({
@@ -13,7 +15,7 @@ class CartCounterIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_bag, color: MegamartColors.white,)),
+        IconButton(onPressed: ()=> Get.to(()=> CartScreen()), icon: const Icon(Icons.shopping_bag, color: MegamartColors.white,)),
         Positioned(
           right: 0,
           child: Container(

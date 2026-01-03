@@ -3,7 +3,7 @@ import 'package:ecommerce_final_year_project/common/widgets/appbar/tabbar.dart';
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/serachbar.dart';
 import 'package:ecommerce_final_year_project/common/widgets/brand/e_brand_cad.dart';
 import 'package:ecommerce_final_year_project/common/widgets/layout/gridveiw.dart';
-import 'package:ecommerce_final_year_project/common/widgets/product/cart/menu_product_cart.dart';
+import 'package:ecommerce_final_year_project/common/widgets/cart/menu_product_cart.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/store/widgets/tab_view_cetagroies.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
