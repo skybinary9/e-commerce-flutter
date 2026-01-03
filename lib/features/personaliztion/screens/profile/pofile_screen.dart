@@ -2,8 +2,11 @@ import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_final_year_project/common/widgets/images/e_circurcular_images.dart';
 import 'package:ecommerce_final_year_project/data/repositories/user_repository.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/controllers/user_controlller.dart';
+import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/change_dob.dart';
+import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/change_gender.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/change_name.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/change_username.dart';
+import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/chnage_phone_no.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/profilemenu.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/widget/update_email.dart';
 import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
@@ -136,13 +139,16 @@ class PofileScreen extends StatelessWidget {
                   )),
 
               Obx(() => ProfileMenu(
-                    onPressed: () {},
-                    title: 'Ph.No',
-                    vlaue: controller.user.value.phoneNumber,
-                  )),
+                onPressed: () => Get.to(() => const ChangePhoneScreen()),
+                title: 'Ph.No',
+                vlaue: controller.user.value.phoneNumber.isNotEmpty
+                ? controller.user.value.phoneNumber
+                : 'Not set',
+                )),
+
 
               Obx(() => ProfileMenu(
-                    onPressed: () {},
+                    onPressed: () => Get.to(()=> ChangeGenderScreen()),
                     title: 'Gender',
                     vlaue: controller.user.value.gender.isNotEmpty
                         ? controller.user.value.gender
@@ -150,12 +156,12 @@ class PofileScreen extends StatelessWidget {
                   )),
 
               Obx(() => ProfileMenu(
-                    onPressed: () {},
-                    title: 'DOB',
-                    vlaue: controller.user.value.dateOfBirth.isNotEmpty
-                        ? controller.user.value.dateOfBirth
-                        : 'Not set',
-                  )),
+                onPressed: () => Get.to(() => const ChangeDobScreen()),
+                title: 'DOB',
+                vlaue: controller.user.value.dateOfBirth.isNotEmpty
+                ? controller.user.value.dateOfBirth
+                : 'Not set',
+                )),
 
               const Divider(),
               const SizedBox(height: MegamartSize.spaceBetweenItems),

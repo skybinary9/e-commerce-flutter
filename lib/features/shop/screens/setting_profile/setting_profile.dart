@@ -3,6 +3,7 @@ import 'package:ecommerce_final_year_project/common/widgets/custom_shape/contain
 import 'package:ecommerce_final_year_project/common/widgets/listtile/t_setting_menu_title.dart';
 import 'package:ecommerce_final_year_project/common/widgets/listtile/user_pofile_tile.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';
+import 'package:ecommerce_final_year_project/data/repositories/authentication_repository.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/pofile_screen.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
@@ -34,64 +35,77 @@ class SettingProfile extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 12), // 🔥 reduced space
+                  const SizedBox(height: 12),
 
-                  /// USER PROFILE (UPPER)
-                  UserProfileTile(onEditTap: () => Get.to(() => const PofileScreen()),
-),
+                  UserProfileTile(
+                    onEditTap: () => Get.to(() => const PofileScreen()),
+                  ),
 
-                  const SizedBox(height: 20), // thora gap
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
 
-            /// BODY
-            const Padding(
-              padding: EdgeInsets.all(MegamartSize.defaultSpace),
+            /// BODY (❌ const removed)
+            Padding(
+              padding: const EdgeInsets.all(MegamartSize.defaultSpace),
               child: Column(
                 children: [
-                  SectionHeading(
+                  const SectionHeading(
                     title: 'Account Setting',
                     showactionButton: false,
                   ),
-                  SizedBox(height: MegamartSize.spaceBetweenItems),
 
-                  TSettingMenuTitle(
+                  const SizedBox(height: MegamartSize.spaceBetweenItems),
+
+                  const TSettingMenuTitle(
                     title: 'My Account',
                     subtitle: 'Set shopping delivery address',
                     icon: Iconsax.safe_home,
                   ),
-                  TSettingMenuTitle(
+
+                  const TSettingMenuTitle(
                     title: 'My Cart',
                     subtitle: 'Add, remove products, and move to checkout',
                     icon: Iconsax.shopping_cart,
                   ),
-                  TSettingMenuTitle(
+
+                  const TSettingMenuTitle(
                     title: 'My Order',
                     subtitle: 'In progress and complete orders',
                     icon: Iconsax.bag_tick,
                   ),
-                  TSettingMenuTitle(
+
+                  const TSettingMenuTitle(
                     title: 'Bank Account',
                     subtitle: 'Withdraw balance to registered bank account',
                     icon: Iconsax.bank,
                   ),
-                  TSettingMenuTitle(
+
+                  const TSettingMenuTitle(
                     title: 'My Coupons',
                     subtitle: 'List of all disconnected coupons',
                     icon: Iconsax.discount_shape,
                   ),
-                  TSettingMenuTitle(
+
+                  const TSettingMenuTitle(
                     title: 'Notification',
                     subtitle: 'Set notification messages',
                     icon: Iconsax.notification,
                   ),
-                  
-/// App Setting
-                SizedBox(height: MegamartSize.spaceBetweenItems,),
-                SectionHeading(title: 'App Setting', showactionButton: false,),
-                SizedBox(height: MegamartSize.spaceBetweenItems,),
-                TSettingMenuTitle(title: 'Upload Data', subtitle: 'Upload Data', icon: Iconsax.document_upload,),
+
+                  const SizedBox(height: MegamartSize.spaceBetweenItems),
+                  const Divider(),
+                  const SizedBox(height: MegamartSize.spaceBetweenItems),
+
+                  /// LOGOUT BUTTON ✅
+                  TSettingMenuTitle(
+                    title: 'Logout',
+                    subtitle: 'Sign out from your account',
+                    icon: Iconsax.logout,
+                    textColor: Colors.red,
+                    onTap: () => _showLogoutDialog(),
+                  ),
                 ],
               ),
             ),
@@ -100,5 +114,21 @@ class SettingProfile extends StatelessWidget {
       ),
     );
   }
-}
 
+  /// ✅ LOGOUT DIALOG
+  void _showLogoutDialog() {
+    Get.defaultDialog(
+      title: 'Logout',
+      middleText: 'Are you sure you want to logout?',
+      textCancel: 'Cancel',
+      textConfirm: 'Logout',
+      confirmTextColor: Colors.white,
+      cancelTextColor: MegamartColors.darkGray,
+      buttonColor: Colors.red,
+      onConfirm: () async {
+        Get.back();
+        await AuthenticationRepository.instance.logout();
+      },
+    );
+  }
+}

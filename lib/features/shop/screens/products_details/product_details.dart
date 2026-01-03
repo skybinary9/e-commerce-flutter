@@ -1,4 +1,5 @@
 import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/product_review/product_review.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/products_details/widget/Product_Attirbutes.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/products_details/widget/bottom_add_to_cart.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/products_details/widget/image_product_slide.dart';
@@ -8,6 +9,8 @@ import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:read_more_text/read_more_text.dart';
 
 class ProductDetails extends StatelessWidget {
@@ -57,7 +60,7 @@ class ProductDetails extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const SectionHeading(title: 'Review(199)', showactionButton: false,),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.arrow_circle_right))
+                      IconButton(onPressed: ()=> Get.to(()=> const ProductReview()), icon: Icon(Icons.arrow_circle_right))
                     ],
                   ),
                   const SizedBox(height: MegamartSize.spaceBetweenSections),

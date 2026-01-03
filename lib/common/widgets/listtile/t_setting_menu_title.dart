@@ -7,13 +7,15 @@ class TSettingMenuTitle extends StatelessWidget {
   required this.subtitle, 
   this.trailing, 
   required this.icon, 
-  this.onTap
+  this.onTap,   
+  this.textColor = MegamartColors.primary,
   });
 
   final String title, subtitle;
   final Widget? trailing;
   final IconData icon;
   final VoidCallback ? onTap; 
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
