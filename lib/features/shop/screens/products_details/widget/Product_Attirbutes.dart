@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 import 'package:ecommerce_final_year_project/common/widgets/chip/choice_chip.dart';
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/app_circular_container.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';

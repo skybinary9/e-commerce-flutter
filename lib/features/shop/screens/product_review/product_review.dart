@@ -2,11 +2,8 @@ import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_final_year_project/common/widgets/rating_review/rating_review.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/product_review/widgets/progress_rating_indicator.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/product_review/widgets/user_review_card.dart';
-import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ProductReview extends StatelessWidget {
   const ProductReview({super.key});
