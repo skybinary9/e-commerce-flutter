@@ -17,8 +17,8 @@ class OnboardingPage extends StatelessWidget {
         children: [
           Image
           ( 
-            width: HelperFunction.screenWidth(context) * 0.8,
-            height:HelperFunction.screenHeight(context) * 0.6,
+            width: HelperFunction.screenWidth() * 0.8,
+            height:HelperFunction.screenHeight() * 0.6,
             image: AssetImage(images),
             filterQuality: FilterQuality.low,
             ),

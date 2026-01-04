@@ -26,7 +26,7 @@ class SuccessScreen extends StatelessWidget {
           child: Column(
             children: [
               /// IMAGE
-             Image(image: AssetImage(image), width: HelperFunction.screenWidth(context)*0.6,),
+             Image(image: AssetImage(image), width: HelperFunction.screenWidth()*0.6,),
               const SizedBox(height: MegamartSize.spaceBetweenSections),
               /// TITLE
               Text(

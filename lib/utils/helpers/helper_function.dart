@@ -90,19 +90,32 @@ class HelperFunction {
   }
 
   // ✅ Get screen sizes safely
-  static Size screenSize(BuildContext context) {
-    return MediaQuery.of(Get.context!).size;
+  static Size screenSize() {
+  final context = Get.context;
+  if (context != null) {
+    return MediaQuery.of(context).size;
   }
+  return Size.zero; // یا default size
+}
+
   // ✅ Get screen height and width safely
 
-  static double screenHeight(BuildContext context) {
-    return MediaQuery.of(Get.context!).size.height;
+  static double screenHeight() {
+  final context = Get.context;
+  if (context != null) {
+    return MediaQuery.of(context).size.height;
   }
+  return 0.0;
+}
   // ✅ Get screen width safely
 
-  static double screenWidth(BuildContext context) {
-    return MediaQuery.of(Get.context!).size.width;
+  static double screenWidth() {
+  final context = Get.context;
+  if (context != null) {
+    return MediaQuery.of(context).size.width;
   }
+  return 0.0;
+}
 
   // ✅ Format date properly
   static String formatDate(DateTime date) {

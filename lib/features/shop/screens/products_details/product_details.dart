@@ -17,58 +17,93 @@ class ProductDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
     final dark = HelperFunction.isDarkMode(context);
+    
     return Scaffold(
-      bottomNavigationBar: BottomAddToCart(),
-      body: SingleChildScrollView(
+      appBar: AppBar(), // Add AppBar for back button
+      body: SafeArea( // Wrap with SafeArea
         child: Column(
           children: [
-            /// 1- product image slider
-            EProductImageSlider(),
-            /// 2- products details
-            Padding(
-              padding: EdgeInsets.only(left: MegamartSize.defaultSpace, bottom: MegamartSize.defaultSpace,right: MegamartSize.defaultSpace),
-              child: Column(
-                children: [
-                  /// Rating & Store
-                  Rating(),
-                     
-                  /// Price, Title, stock And brand
-                  ProductMetaData(),
-                  /// Atrributes
-                  ProductAttirbutes(),
-                  const SizedBox(height: MegamartSize.spaceBetweenSections),
-                  /// Checkout Button
-                  SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, 
-                  child: Text("Checkout"))),
-                  const SizedBox(height: MegamartSize.spaceBetweenSections),               
-                  /// Description
-                  SectionHeading(title: 'Description', showactionButton: false,),
-                  const SizedBox(height: MegamartSize.spaceBetweenItems),
-                  ReadMoreText('This product offers reliable performance, ease of use, and a clean, modern design for everyday needs. his product offers reliable performance, ease of use, and a clean, modern design for everyday needs. his product offers reliable performance, ease of use, and a clean, modern design for everyday needs. his product offers reliable performance, ease of use, and a clean, modern design for everyday needs', 
-                  numLines: 2,
-                   readMoreText: 'Show more', readLessText: 'Less',
-                   readMoreTextStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800 ),
-                   readMoreIconColor: MegamartColors.primary,
-                  ),
-                  /// Review
-                  Divider(),
-                  const SizedBox(height: MegamartSize.spaceBetweenItems),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const SectionHeading(title: 'Review(199)', showactionButton: false,),
-                      IconButton(onPressed: ()=> Get.to(()=> const ProductReview()), icon: Icon(Icons.arrow_circle_right))
-                    ],
-                  ),
-                  const SizedBox(height: MegamartSize.spaceBetweenSections),
-
-
-                ],
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    EProductImageSlider(),
+                    Padding(
+                      padding: const EdgeInsets.all(MegamartSize.defaultSpace),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Rating(),
+                          const SizedBox(height: MegamartSize.md),
+                          const ProductMetaData(),
+                          const SizedBox(height: MegamartSize.md),
+                          const ProductAttirbutes(),
+                          const SizedBox(height: MegamartSize.lg),
+                          
+                          /// Checkout Button
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              onPressed: (){}, 
+                              child: const Text("Checkout")
+                            ),
+                          ),
+                          
+                          const SizedBox(height: MegamartSize.lg),
+                          const Divider(),
+                          const SizedBox(height: MegamartSize.md),
+                          
+                          /// Description
+                          const SectionHeading(
+                            title: 'Description', 
+                            showactionButton: false,
+                          ),
+                          const SizedBox(height: MegamartSize.sm),
+                          ReadMoreText(
+                            'This product offers reliable performance, ease of use, and a clean, modern design for everyday needs.',
+                            numLines: 2,
+                            readMoreText: 'Show more', 
+                            readLessText: 'Less',
+                            style: TextStyle(
+                              color: dark ? MegamartColors.white : MegamartColors.dark,
+                            ),
+                            readMoreTextStyle: TextStyle(
+                              fontSize: 14, 
+                              fontWeight: FontWeight.w600,
+                              color: MegamartColors.primary,
+                            ),
+                          ),
+                          
+                          const SizedBox(height: MegamartSize.lg),
+                          const Divider(),
+                          const SizedBox(height: MegamartSize.md),
+                          
+                          /// Review
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const SectionHeading(
+                                title: 'Review(199)', 
+                                showactionButton: false,
+                              ),
+                              IconButton(
+                                onPressed: () => Get.to(() => const ProductReview()), 
+                                icon: Icon(
+                                  Icons.arrow_circle_right,
+                                  color: MegamartColors.primary,
+                                )
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            )
-           
+            ),
+            const BottomAddToCart(), // Bottom navigation outside scroll
           ],
         ),
       ),

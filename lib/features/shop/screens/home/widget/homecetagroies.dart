@@ -1,6 +1,8 @@
 
 import 'package:ecommerce_final_year_project/common/widgets/images_text/images_text.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/sub_cetagroies/sub_cetagoires.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeCetagories extends StatelessWidget {
   const HomeCetagories({
@@ -15,7 +17,7 @@ class HomeCetagories extends StatelessWidget {
         itemCount: 6,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return EVerticalImagesText(images: '', title: 'Shoes', onTap: (){},);
+          return EVerticalImagesText(images: '', title: 'Shoes', onTap: ()=> Get.to(()=>const SubCetagoires()),);
         },
       ),
     );

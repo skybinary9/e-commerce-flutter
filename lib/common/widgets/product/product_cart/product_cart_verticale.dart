@@ -114,34 +114,34 @@ class ProductCartVertical extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: MegamartSize.sm),
-                  child: const ProductPriceText(price: '35.0'),
-                  ),
-                  const Spacer(), // 👈 pushes icon to right
-                  Container(
-                    decoration: const BoxDecoration(
-                      color: MegamartColors.dark,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(MegamartSize.cardRadiusMd),
-                        bottomRight:
-                        Radius.circular(MegamartSize.productImageRadius),
-                        ),
-                        ),
-                        child: const SizedBox(
-                          width: MegamartSize.iconLg,
-                          height: MegamartSize.iconLg,
-                          child: Icon(
-                            Iconsax.add,
-                            size: 30,
-                            color: MegamartColors.white,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
+            // Line 115-120 کے قریب مسئلہ:
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
+    Padding(
+      padding: const EdgeInsets.only(left: MegamartSize.sm),
+      child: const ProductPriceText(price: '35.0'), // const ہٹا دیں
+    ),
+    const Spacer(),
+    Container(
+      decoration: BoxDecoration(
+        color: MegamartColors.dark,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(MegamartSize.cardRadiusMd),
+          bottomRight: Radius.circular(MegamartSize.productImageRadius),
+        ),
+      ),
+      child: const SizedBox(
+        width: MegamartSize.iconLg,
+        height: MegamartSize.iconLg,
+        child: Icon(
+          Iconsax.add,
+          color: MegamartColors.white,
+        ),
+      ),
+    ),
+  ],
+),
                   ],
                 ),
               ),
