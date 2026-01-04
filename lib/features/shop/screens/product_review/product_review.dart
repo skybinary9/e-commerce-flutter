@@ -1,5 +1,5 @@
 import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_final_year_project/common/widgets/rating_review/rating_review.dart';
+import 'package:ecommerce_final_year_project/common/widgets/product/rating_review/rating_review.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/product_review/widgets/progress_rating_indicator.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/product_review/widgets/user_review_card.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';

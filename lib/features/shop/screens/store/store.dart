@@ -3,13 +3,15 @@ import 'package:ecommerce_final_year_project/common/widgets/appbar/tabbar.dart';
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/serachbar.dart';
 import 'package:ecommerce_final_year_project/common/widgets/brand/e_brand_cad.dart';
 import 'package:ecommerce_final_year_project/common/widgets/layout/gridveiw.dart';
-import 'package:ecommerce_final_year_project/common/widgets/cart/menu_product_cart.dart';
+import 'package:ecommerce_final_year_project/common/widgets/product/cart/menu_product_cart.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/all_brands/all_brands.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/store/widgets/tab_view_cetagroies.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class EStoreScreen extends StatelessWidget {
@@ -51,7 +53,7 @@ class EStoreScreen extends StatelessWidget {
                       const SizedBox(
                       height: MegamartSize.spaceBetweenSections,),
                       ///---Feature
-                      SectionHeading(title: 'Featured & Brands', onPressed: (){}),
+                      SectionHeading(title: 'Featured & Brands', onPressed: ()=> Get.to(()=>AllBrands())),
                       const SizedBox(
                       height: MegamartSize.spaceBetweenItems /1.5 ,),
                       EGridView(itemCount: 4, mainAxisExtent: 80,itemBuilder: (_, index){

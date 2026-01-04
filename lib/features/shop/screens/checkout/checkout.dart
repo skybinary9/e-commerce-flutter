@@ -1,5 +1,5 @@
 import 'package:ecommerce_final_year_project/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_final_year_project/common/widgets/cart/coupon_code.dart';
+import 'package:ecommerce_final_year_project/common/widgets/product/cart/coupon_code.dart';
 import 'package:ecommerce_final_year_project/common/widgets/custom_shape/container/app_circular_container.dart';
 import 'package:ecommerce_final_year_project/common/widgets/login_signup/success_screen/success_screen.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/cart/widgets/cart_item.dart';

@@ -1,5 +1,6 @@
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
+import 'package:ecommerce_final_year_project/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 
 class AppCircularContainer extends StatelessWidget {
@@ -13,10 +14,17 @@ class AppCircularContainer extends StatelessWidget {
     this.backgroundColor = MegamartColors.white,
     this.margin,
     this.showBorder = false,
-    this.borderColor = Colors.white,
+    this.borderColor, // Make this nullable
     this.borderWidth = 1,
+    this.elevation = 0,
+    this.shadowColor,
   });
 
+  // ... other properties
+  final Color? borderColor; // Changed to nullable
+  final double borderWidth;
+  final double elevation;
+  final Color? shadowColor;
   final double? width;
   final double? height;
   final EdgeInsets? padding;
@@ -24,27 +32,46 @@ class AppCircularContainer extends StatelessWidget {
   final EdgeInsets? margin;
   final Widget? child;
   final Color backgroundColor;
-
-  /// 🔹 Border properties
+  
   final bool showBorder;
-  final Color borderColor;
-  final double borderWidth;
-
+  
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = HelperFunction.isDarkMode(context);
+    
+    // Default border color based on theme
+    final defaultBorderColor = isDarkMode 
+        ? MegamartColors.white.withOpacity(0.5)
+        : MegamartColors.darkGray.withOpacity(0.3);
+    
+    // Default background color based on theme
+    final defaultBackgroundColor = backgroundColor == MegamartColors.white
+        ? (isDarkMode ? MegamartColors.dark : MegamartColors.white)
+        : backgroundColor;
+
     return Container(
       width: width,
       height: height,
       margin: margin,
       padding: padding,
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: defaultBackgroundColor,
         borderRadius: BorderRadius.circular(radius),
         border: showBorder
             ? Border.all(
-                color: borderColor,
+                color: borderColor ?? defaultBorderColor, // Use default if null
                 width: borderWidth,
               )
+            : null,
+        boxShadow: elevation > 0
+            ? [
+                BoxShadow(
+                  color: shadowColor ?? 
+                      Colors.black.withOpacity(isDarkMode ? 0.3 : 0.1),
+                  blurRadius: elevation * 2,
+                  offset: Offset(0, elevation),
+                ),
+              ]
             : null,
       ),
       child: child,

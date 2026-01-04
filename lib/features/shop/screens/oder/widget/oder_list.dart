@@ -14,8 +14,8 @@ class OderList extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       itemCount: 5,
-      separatorBuilder: (_, __) => const SizedBox(height: MegamartSize.spaceBetweenItems),
-      itemBuilder: (_, __) => AppCircularContainer(
+      separatorBuilder: (_, _) => const SizedBox(height: MegamartSize.spaceBetweenItems),
+      itemBuilder: (_, _) => AppCircularContainer(
         showBorder: true,
         padding: const EdgeInsets.all(MegamartSize.md),
         backgroundColor: dark ? MegamartColors.dark : MegamartColors.light,

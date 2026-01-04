@@ -1,5 +1,5 @@
-import 'package:ecommerce_final_year_project/common/widgets/cart/cart_items.dart';
-import 'package:ecommerce_final_year_project/common/widgets/cart/product_quantity.dart';
+import 'package:ecommerce_final_year_project/common/widgets/product/cart/cart_items.dart';
+import 'package:ecommerce_final_year_project/common/widgets/product/cart/product_quantity.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/price_text.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class ECartItem extends StatelessWidget {
     return ListView.separated(
           itemCount: 2,
           shrinkWrap: true,
-          separatorBuilder: (_, __) =>
+          separatorBuilder: (_, _) =>
               const SizedBox(height: MegamartSize.spaceBetweenSections),
               itemBuilder: (_, index) =>
               Column(
