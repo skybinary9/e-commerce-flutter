@@ -6,6 +6,7 @@ import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart
 import 'package:ecommerce_final_year_project/data/repositories/authentication_repository.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/address/address.dart';
 import 'package:ecommerce_final_year_project/features/personaliztion/screens/profile/pofile_screen.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/oder/oder.dart';
 import 'package:ecommerce_final_year_project/utils/constants/colors.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
@@ -73,10 +74,11 @@ class SettingProfile extends StatelessWidget {
                     icon: Iconsax.shopping_cart,
                   ),
 
-                  const TSettingMenuTitle(
+                  TSettingMenuTitle(
                     title: 'My Order',
                     subtitle: 'In progress and complete orders',
                     icon: Iconsax.bag_tick,
+                    onTap: ()=> Get.to(()=> const OderScreen())
                   ),
 
                   const TSettingMenuTitle(
