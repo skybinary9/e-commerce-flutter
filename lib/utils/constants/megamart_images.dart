@@ -26,6 +26,18 @@ class MegamartImages {
   static const String keyboard  = "assets/images/products/keyboard.jpeg";
   static const String mouse = "assets/images/products/mouse.jpeg";
 
+  ///payment
+  static const String applepay  = "assets/images/payment/apple.png";
+  static const String googlepay  = "assets/images/payment/g-pay-logo-free-png.png";
+  static const String creditcard  = "assets/images/payment/credeit card.png";
+  static const String mastercard  = "assets/images/payment/master.png";
+  static const String paypal  = "assets/images/payment/paypal.png";
+  static const String visa  = "assets/images/payment/visa.jpeg";
+  static const String paystack  = "assets/images/payment/paystack.png";
+  static const String paytm  = "assets/images/payment/paytm.png";
+  static const String successfulpayment  = "assets/images/payment/success payment icon.jpeg";
+  
+
   //icon
   static const String clothicon = "assets/icons/clothicon.png";
 
