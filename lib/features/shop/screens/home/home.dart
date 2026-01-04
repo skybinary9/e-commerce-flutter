@@ -3,12 +3,14 @@ import 'package:ecommerce_final_year_project/common/widgets/custom_shape/contain
 import 'package:ecommerce_final_year_project/common/widgets/layout/gridveiw.dart';
 import 'package:ecommerce_final_year_project/common/widgets/product/product_cart/product_cart_verticale.dart';
 import 'package:ecommerce_final_year_project/common/widgets/text/headertext.dart';
+import 'package:ecommerce_final_year_project/features/shop/screens/All_Product/allproduct.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/home/widget/home_appbar.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/home/widget/homecetagroies.dart';
 import 'package:ecommerce_final_year_project/features/shop/screens/home/widget/promo_slider.dart';
 import 'package:ecommerce_final_year_project/utils/constants/megamart_images.dart';
 import 'package:ecommerce_final_year_project/utils/constants/size.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -50,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                       left: MegamartSize.defaultSpace,
                     ),
                     child: SectionHeading(
-                      title: 'Popular Categories',
+                      title: 'Popular Categories', showactionButton: false,
                     ),
                   ),
 
@@ -79,9 +81,9 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   //heading
-                  const SectionHeading(title: 'Papular Products',), 
+                  SectionHeading(title: 'Papular Products', onPressed: () => Get.to (()=> const AllProduct()),), 
                   const SizedBox(
-                    height: MegamartSize.spaceBetweenItems,
+                    height: MegamartSize.spaceBetweenItems, 
                   ),
 
                   /// Popular Products

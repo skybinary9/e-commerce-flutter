@@ -20,7 +20,6 @@ class ProductDetails extends StatelessWidget {
     final dark = HelperFunction.isDarkMode(context);
     
     return Scaffold(
-      appBar: AppBar(), // Add AppBar for back button
       body: SafeArea( // Wrap with SafeArea
         child: Column(
           children: [

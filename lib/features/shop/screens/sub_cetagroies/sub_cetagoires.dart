@@ -59,7 +59,7 @@ class SubCetagoires extends StatelessWidget {
                 ],
               ),
               
-              /// Additional Content (اگر مزید ویجٹس ہوں)
+              /// Additional Content 
               const SizedBox(height: MegamartSize.spaceBetweenSections),
               
               /// Recommended Products Section
