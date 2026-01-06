@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_final_year_project/features/shop/models/category_model.dart';
+import 'package:ecommerce_final_year_project/utils/popups/loaders.dart';
 
 class CategoryRepository {
   static final CategoryRepository _instance = CategoryRepository._internal();
@@ -11,7 +12,6 @@ class CategoryRepository {
   /// Fetch all featured categories (where IsFeatured = true)
   Future<List<CategoryModel>> getFeaturedCategories() async {
     try {
-      
       final querySnapshot = await _db
           .collection('Categories')
           .where('IsFeatured', isEqualTo: true)
@@ -22,7 +22,10 @@ class CategoryRepository {
           .map((doc) => CategoryModel.fromQuerySnapshot(doc))
           .toList();
     } catch (e) {
-      print('Error fetching featured categories: $e');
+      ELoader.errorSnackBar(
+        title: 'Error',
+        message: 'Error fetching featured categories: $e',
+      );
       return [];
     }
   }
@@ -35,7 +38,10 @@ class CategoryRepository {
           .map((doc) => CategoryModel.fromQuerySnapshot(doc))
           .toList();
     } catch (e) {
-      print('Error fetching all categories: $e');
+      ELoader.errorSnackBar(
+        title: 'Error',
+        message: 'Error fetching all categories: $e',
+      );
       return [];
     }
   }
@@ -52,7 +58,10 @@ class CategoryRepository {
           .map((doc) => CategoryModel.fromQuerySnapshot(doc))
           .toList();
     } catch (e) {
-      print('Error fetching sub-categories: $e');
+      ELoader.errorSnackBar(
+        title: 'Error',
+        message: 'Error fetching sub-categories: $e',
+      );
       return [];
     }
   }
@@ -71,7 +80,10 @@ class CategoryRepository {
         return CategoryModel.empty();
       }
     } catch (e) {
-      print('Error fetching category by ID: $e');
+      ELoader.errorSnackBar(
+        title: 'Error',
+        message: 'Error fetching category by ID: $e',
+      );
       return CategoryModel.empty();
     }
   }
@@ -97,8 +109,11 @@ class CategoryRepository {
 
       await _db.collection('Categories').add(category.toJson());
     } catch (e) {
-      print('Error uploading category: $e');
-      throw e;
+      ELoader.errorSnackBar(
+        title: 'Error',
+        message: 'Error uploading category: $e',
+      );
+      rethrow;
     }
   }
 
@@ -106,14 +121,12 @@ class CategoryRepository {
   Future<String> _uploadToCloudinary(String imagePath) async {
     // Note: You'll need to implement Cloudinary upload logic
     // This is a placeholder implementation
-    // You'll need to add cloudinary_flutter or http package
-    
-    // Cloudinary configuration
+
     const cloudName = 'dqosjhlcw';
+    // ignore: unused_local_variable
     const uploadPreset = 'categories';
-    
+
     // For now, return a placeholder
-    // In production, implement actual Cloudinary upload
     return 'https://res.cloudinary.com/$cloudName/image/upload/v1/categories/placeholder';
   }
 }

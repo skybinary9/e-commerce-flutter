@@ -8,18 +8,20 @@ import 'package:get/get.dart';
 class GeneralBinding extends Bindings {
   @override
   void dependencies() {
+    // ignore: avoid_print
     print('GeneralBinding initializing dependencies...');
-    
+
     // Network Manager (permanent singleton)
     Get.put(NetworkManager(), permanent: true);
-    
+
     // Repositories
     Get.put(CategoryRepository());
-    
+
     // Controllers
     Get.put(CategoriesController(), permanent: true);
     Get.put(ForgetPasswordController(), permanent: true);
-    
+
+    // ignore: avoid_print
     print('All dependencies initialized in GeneralBinding');
   }
 }

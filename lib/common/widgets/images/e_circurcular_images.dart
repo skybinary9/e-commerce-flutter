@@ -31,22 +31,23 @@ class ECircularImage extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = HelperFunction.isDarkMode(context);
 
-    final String finalImage =
-        image.isNotEmpty ? image : MegamartImages.userimage;
+    final String finalImage = image.isNotEmpty
+        ? image
+        : MegamartImages.userimage;
 
     Widget avatar = Container(
       width: width,
       height: height,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: backgroundColor ??
+        color:
+            backgroundColor ??
             (isDark ? MegamartColors.black : MegamartColors.white),
         border: borderWidth > 0
             ? Border.all(
-                color: borderColor ??
-                    (isDark
-                        ? MegamartColors.white
-                        : MegamartColors.black),
+                color:
+                    borderColor ??
+                    (isDark ? MegamartColors.white : MegamartColors.black),
                 width: borderWidth,
               )
             : null,
@@ -56,17 +57,11 @@ class ECircularImage extends StatelessWidget {
             ? Image.network(
                 finalImage,
                 fit: fit,
-                errorBuilder: (_, __, ___) {
-                  return Image.asset(
-                    MegamartImages.userimage,
-                    fit: fit,
-                  );
+                errorBuilder: (_, _, _) {
+                  return Image.asset(MegamartImages.userimage, fit: fit);
                 },
               )
-            : Image.asset(
-                finalImage,
-                fit: fit,
-              ),
+            : Image.asset(finalImage, fit: fit),
       ),
     );
 

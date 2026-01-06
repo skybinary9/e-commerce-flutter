@@ -34,7 +34,7 @@ class HomeCategories extends StatelessWidget {
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          separatorBuilder: (_, __) => const SizedBox(width: 16),
+          separatorBuilder: (_, _) => const SizedBox(width: 16),
           itemCount: categoriesController.featuredCategories.length,
           itemBuilder: (_, index) {
             final category = categoriesController.featuredCategories[index];

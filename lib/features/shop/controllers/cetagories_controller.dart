@@ -1,5 +1,6 @@
 import 'package:ecommerce_final_year_project/data/repositories/cetagory_repositry.dart';
 import 'package:ecommerce_final_year_project/features/shop/models/category_model.dart';
+import 'package:ecommerce_final_year_project/utils/popups/loaders.dart';
 import 'package:get/get.dart';
 
 class CategoriesController extends GetxController {
@@ -8,10 +9,10 @@ class CategoriesController extends GetxController {
   // Variables
   final isLoading = false.obs;
   final _categoryRepository = CategoryRepository();
-  
+
   // List to store featured categories
   final featuredCategories = <CategoryModel>[].obs;
-  
+
   // List to store all categories
   final allCategories = <CategoryModel>[].obs;
 
@@ -24,50 +25,31 @@ class CategoriesController extends GetxController {
   /// Fetch featured categories
   Future<void> fetchFeaturedCategories() async {
     try {
-      // Start loading
       isLoading.value = true;
-
-      // Fetch categories from repository
       final categories = await _categoryRepository.getFeaturedCategories();
-
-      // Update the list
       featuredCategories.assignAll(categories);
     } catch (e) {
-      // Handle error
-      print('Error fetching featured categories: $e');
-      Get.snackbar(
-        'Error',
-        'Failed to load categories. Please try again.',
-        snackPosition: SnackPosition.BOTTOM,
+      ELoader.errorSnackBar(
+        title: 'Error',
+        message: 'Failed to load featured categories. Please try again.',
       );
     } finally {
-      // Stop loading
       isLoading.value = false;
     }
   }
 
-  
-
   /// Fetch all categories
   Future<void> fetchAllCategories() async {
     try {
-      // Start loading
       isLoading.value = true;
-      // Fetch categories from repository
       final categories = await _categoryRepository.getAllCategories();
-
-      // Update the list
       allCategories.assignAll(categories);
     } catch (e) {
-      // Handle error
-      print('Error fetching all categories: $e');
-      Get.snackbar(
-        'Error',
-        'Failed to load categories. Please try again.',
-        snackPosition: SnackPosition.BOTTOM,
+      ELoader.errorSnackBar(
+        title: 'Error',
+        message: 'Failed to load categories. Please try again.',
       );
     } finally {
-      // Stop loading
       isLoading.value = false;
     }
   }
@@ -77,7 +59,10 @@ class CategoriesController extends GetxController {
     try {
       return await _categoryRepository.getSubCategories(parentId);
     } catch (e) {
-      print('Error fetching sub-categories: $e');
+      ELoader.errorSnackBar(
+        title: 'Error',
+        message: 'Failed to load sub-categories. Please try again.',
+      );
       return [];
     }
   }
@@ -87,7 +72,10 @@ class CategoriesController extends GetxController {
     try {
       return await _categoryRepository.getCategoryById(categoryId);
     } catch (e) {
-      print('Error fetching category by ID: $e');
+      ELoader.errorSnackBar(
+        title: 'Error',
+        message: 'Failed to load category. Please try again.',
+      );
       return CategoryModel.empty();
     }
   }
@@ -101,7 +89,6 @@ class CategoriesController extends GetxController {
   }) async {
     try {
       isLoading.value = true;
-      
       await _categoryRepository.uploadCategoryWithImage(
         name: name,
         imagePath: imagePath,
@@ -111,20 +98,17 @@ class CategoriesController extends GetxController {
 
       // Refresh categories list
       await fetchFeaturedCategories();
-      
-      Get.snackbar(
-        'Success',
-        'Category uploaded successfully!',
-        snackPosition: SnackPosition.BOTTOM,
+
+      ELoader.successSnackBar(
+        title: 'Success',
+        message: 'Category uploaded successfully!',
       );
     } catch (e) {
-      print('Error uploading category: $e');
-      Get.snackbar(
-        'Error',
-        'Failed to upload category. Please try again.',
-        snackPosition: SnackPosition.BOTTOM,
+      ELoader.errorSnackBar(
+        title: 'Error',
+        message: 'Failed to upload category. Please try again.',
       );
-      throw e;
+      rethrow;
     } finally {
       isLoading.value = false;
     }
@@ -133,7 +117,6 @@ class CategoriesController extends GetxController {
   /// Search categories by name
   List<CategoryModel> searchCategories(String query) {
     if (query.isEmpty) return [];
-    
     return allCategories.where((category) {
       return category.name.toLowerCase().contains(query.toLowerCase());
     }).toList();
