@@ -26,10 +26,10 @@ class UserProfileTile extends StatelessWidget {
           image: image.isNotEmpty ? image : MegamartImages.userimage,
           height: 56,
           width: 56,
-          padding: 0,
+          //padding: 0,
           isNetworkImage: image.isNotEmpty,
           backgroundColor: MegamartColors.grey, 
-          overlayColor: Colors.white, // overlayColor fix
+          //overlayColor: Colors.white, // overlayColor fix
         ),
         title: Text(
           controller.user.value.fullName,

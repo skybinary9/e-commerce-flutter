@@ -51,7 +51,7 @@ class PofileScreen extends StatelessWidget {
                         height: 80,
                         isNetworkImage: image.isNotEmpty,
                         backgroundColor: Colors.grey.shade300,
-                        overlayColor: Colors.white,
+                        //overlayColor: Colors.white,
                       );
                     }),
 

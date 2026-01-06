@@ -32,7 +32,7 @@ class EBrandCard extends StatelessWidget {
           child: ECircularImage(
             backgroundColor: Colors.transparent,
             image: MegamartImages.clothicon,
-            overlayColor: HelperFunction.isDarkMode(context) ? MegamartColors.white : MegamartColors.black,
+            //overlayColor: HelperFunction.isDarkMode(context) ? MegamartColors.white : MegamartColors.black,
             ),
         ),
           const SizedBox(width: MegamartSize.spaceBetweenItems /2),

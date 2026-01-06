@@ -22,19 +22,15 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             /// HEADER SECTION
             PrimaryHeaderContainer(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   /// App Bar
                   HomeAppBar(),
 
-                  const SizedBox(
-                    height: MegamartSize.spaceBetweenItems,
-                  ),
+                  const SizedBox(height: MegamartSize.spaceBetweenItems),
 
                   /// Search Bar
                   const AppBarSerachBarContainer(
@@ -42,36 +38,30 @@ class HomeScreen extends StatelessWidget {
                     icon: Iconsax.search_normal,
                   ),
 
-                  const SizedBox(
-                    height: MegamartSize.spaceBetweenSections,
-                  ),
+                  const SizedBox(height: MegamartSize.spaceBetweenSections),
 
                   /// Section Heading
                   const Padding(
-                    padding: EdgeInsets.only(
-                      left: MegamartSize.defaultSpace,
-                    ),
+                    padding: EdgeInsets.only(left: MegamartSize.defaultSpace),
                     child: SectionHeading(
-                      title: 'Popular Categories', showactionButton: false,
+                      title: 'Popular Categories',
+                      showactionButton: false,
                     ),
                   ),
 
-                  SizedBox(height: MegamartSize.spaceBetweenItems,),
+                  SizedBox(height: MegamartSize.spaceBetweenItems),
 
                   /// Categories
-                  const HomeCetagories(),
+                  HomeCategories(),
                 ],
               ),
             ),
 
             /// BODY SECTION
             Padding(
-              padding: const EdgeInsets.all(
-                MegamartSize.defaultSpace,
-              ),
+              padding: const EdgeInsets.all(MegamartSize.defaultSpace),
               child: Column(
                 children: [
-
                   /// Promo Slider
                   const EpromoSlider(
                     banners: [
@@ -81,18 +71,23 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   //heading
-                  SectionHeading(title: 'Papular Products', onPressed: () => Get.to (()=> const AllProduct()),), 
-                  const SizedBox(
-                    height: MegamartSize.spaceBetweenItems, 
+                  SectionHeading(
+                    title: 'Papular Products',
+                    onPressed: () => Get.to(() => const AllProduct()),
                   ),
+                  const SizedBox(height: MegamartSize.spaceBetweenItems),
 
                   /// Popular Products
-                  EGridView(itemCount: 4, mainAxisExtent: 305, 
-                  itemBuilder: (_, index)=> const ProductCartVertical(),),
+                  EGridView(
+                    itemCount: 4,
+                    mainAxisExtent: 305,
+                    itemBuilder: (_, index) => const ProductCartVertical(),
+                  ),
                 ],
               ),
             ),
-            const SizedBox(height: MegamartSize.spaceBetweenItems,)
+            const SizedBox(height: MegamartSize.spaceBetweenItems),
+            //ElevatedButton(onPressed: ()=>Get.to(() => TestCategoriesScreen()), child: Text('Save'),)
           ],
         ),
       ),

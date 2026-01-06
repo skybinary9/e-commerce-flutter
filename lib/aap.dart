@@ -9,22 +9,16 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      initialBinding: GeneralBinding(),
       themeMode: ThemeMode.system,
       theme: MegamartTheme.lighTheme,
       darkTheme: MegamartTheme.darkTheme,
-      initialBinding: GeneralBidding(),
       home: const Scaffold(
         backgroundColor: MegamartColors.primary,
-        body: Center(
-          child: CircularProgressIndicator(
-            color: Colors.white,
-          ),
-        ),
+        body: Center(child: CircularProgressIndicator(color: Colors.white)),
       ),
     );
-      
-      
   }
 }

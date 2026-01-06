@@ -60,9 +60,9 @@ class ProductMetaData extends StatelessWidget {
       image: MegamartImages.clothicon,
       height: 32,
       width: 32,
-      overlayColor: HelperFunction.isDarkMode(context)
-          ? MegamartColors.white
-          : MegamartColors.black,
+      //overlayColor: HelperFunction.isDarkMode(context)
+          //? MegamartColors.white
+          //: MegamartColors.black,
     ),
 
     const SizedBox(width: MegamartSize.spaceBetweenItems),

@@ -18,9 +18,7 @@ Future<void> main() async {
   await GetStorage.init();
 
   // Initialize Firebase
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // Inject repositories
   Get.put(AuthenticationRepository());
@@ -28,7 +26,6 @@ Future<void> main() async {
   // Remove splash AFTER navigation logic
   // screenRedirect() will decide which screen to show
   Get.put(ForgetPasswordController(), permanent: true);
-
 
   // Run the app
   runApp(const App());

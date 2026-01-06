@@ -16,7 +16,11 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProductCardHorizontal extends StatelessWidget {
-  const ProductCardHorizontal({super.key});
+  const ProductCardHorizontal({super.key, required this.categoryName, required this.categoryId, 
+  });
+
+  final String categoryName;
+  final String categoryId;
 
   @override
   Widget build(BuildContext context) {

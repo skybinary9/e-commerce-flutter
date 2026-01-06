@@ -6,20 +6,18 @@ import 'package:ecommerce_final_year_project/utils/validators/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
 class UpdateEmailScreen extends StatelessWidget {
   const UpdateEmailScreen({super.key});
 
-  /// ✅ Controller injection (CORRECT PLACE)g
-
   @override
   Widget build(BuildContext context) {
-    final UpdateEmailController controller =
-      Get.put(UpdateEmailController());
+    /// Inject Controller (Runs Once)
+    final UpdateEmailController controller = Get.put(UpdateEmailController());
+
     return Scaffold(
-      appBar: const EAppbar(
-        title: Text('Update Email'),
-        showbackArrow: true,
-      ),
+      appBar: const EAppbar(title: Text('Update Email'), showbackArrow: true),
+
       body: Padding(
         padding: const EdgeInsets.all(MegamartSize.defaultSpace),
         child: Column(
@@ -33,7 +31,7 @@ class UpdateEmailScreen extends StatelessWidget {
 
             const SizedBox(height: MegamartSize.spaceBetweenItems),
 
-            /// Form
+            /// Form Section
             Form(
               key: controller.updateEmailFormKey,
               child: Column(
@@ -41,8 +39,7 @@ class UpdateEmailScreen extends StatelessWidget {
                   /// Email Field
                   TextFormField(
                     controller: controller.email,
-                    validator: (value) =>
-                        MegartValidator.validateEmail(value),
+                    validator: (value) => MegartValidator.validateEmail(value),
                     keyboardType: TextInputType.emailAddress,
                     decoration: const InputDecoration(
                       labelText: 'New Email',
@@ -56,16 +53,23 @@ class UpdateEmailScreen extends StatelessWidget {
                   TextFormField(
                     controller: controller.password,
                     validator: (value) =>
-                        MegartValidator.validateEmptyText(
-                            'Password', value),
+                        MegartValidator.validateEmptyText('Password', value),
                     obscureText: true,
                     decoration: const InputDecoration(
                       labelText: 'Current Password',
                       prefixIcon: Icon(Iconsax.lock),
                     ),
                   ),
+
                   const SizedBox(height: MegamartSize.spaceBetweenItems),
-                  Align(alignment: AlignmentGeometry.topLeft, child: Text(MegamartText.changeEmail, style: Theme.of(context).textTheme.labelLarge,))
+
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      MegamartText.changeEmail,
+                      style: Theme.of(context).textTheme.labelLarge,
+                    ),
+                  ),
                 ],
               ),
             ),
